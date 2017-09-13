@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 26
@@ -17,15 +19,63 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        test.java.srcDir 'src/unitTests/java'
+        test.java.srcDir 'src/integrationTests/java'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:design:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    compile libraries.supportAppCompat
+    compile libraries.supportDesign
+    compile libraries.supportCardView
+    compile libraries.customTabs
+
+    compile libraries.dagger
+    apt libraries.daggerCompiler
+
+    compile libraries.rxJava
+    compile libraries.rxAndroid
+
+    compile libraries.moxy
+    compile libraries.moxyAppCompat
+    apt libraries.moxyCompiler
+
+    //compile libraries.storio
+    //compile libraries.storioAnnotations
+    //apt libraries.storioApt
+
+    compile libraries.retrofit
+    compile libraries.retrofitGsonConverter
+    compile libraries.retrofitRxJavaAdapter
+    compile libraries.jsoup
+
+    compile libraries.butterknife
+    annotationProcessor libraries.butterknifeProcessor
+
+    compile libraries.glide
+
+    // Developer Tools
+    debugCompile libraries.okHttpLoggingInterceptor
+    debugCompile libraries.stetho
+    debugCompile libraries.stethoOkHttp
+
+    // Testing
+    testCompile libraries.junit
+    testCompile libraries.hamcrest
+    testCompile libraries.mockito
+    testCompile libraries.robolectric
+}
+
+configurations.all {
+    resolutionStrategy {
+        force libraries.okHttp
+        force libraries.supportAnnotaations
+    }
 }

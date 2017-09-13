@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.jakewharton.hugo'
 
 android {
     compileSdkVersion 26
@@ -58,6 +59,8 @@ dependencies {
 
     compile libraries.butterknife
     annotationProcessor libraries.butterknifeProcessor
+
+    compile libraries.timber
 
     compile libraries.glide
 

@@ -13,17 +13,19 @@ import by.orion.onlinernews.presentation.common.rx.RxSchedulersProvider;
 import hugo.weaving.DebugLog;
 import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
+import io.reactivex.schedulers.Schedulers;
 
 @InjectViewState
 public class SplashPresenter extends MvpPresenter<SplashView> {
 
-    private static final int DELAY_SPLASH = 3; // in secs
+    private final int delay;
 
     @NonNull
     private final RxSchedulersProvider rxSchedulersProvider;
 
     @Inject
-    public SplashPresenter(@NonNull RxSchedulersProvider rxSchedulersProvider) {
+    public SplashPresenter(int delay, @NonNull RxSchedulersProvider rxSchedulersProvider) {
+        this.delay = delay;
         this.rxSchedulersProvider = rxSchedulersProvider;
     }
 
@@ -33,7 +35,7 @@ public class SplashPresenter extends MvpPresenter<SplashView> {
         super.onFirstViewAttach();
 
         Completable.create(CompletableEmitter::onComplete)
-                .delay(DELAY_SPLASH, TimeUnit.SECONDS)
+                .delay(delay, TimeUnit.SECONDS, Schedulers.trampoline())
                 .compose(rxSchedulersProvider.getIoToMainTransformerCompletableCompletable())
                 .subscribe(() -> getViewState().goToMainScreen());
     }

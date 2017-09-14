@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base Colors -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="grayLight">#f4f4f4</color>
+
+    <!-- Splash Screen -->
+    <color name="background_splash">@color/grayLight</color>
 </resources>

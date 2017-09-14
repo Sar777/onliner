@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.hugo'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 26
@@ -13,8 +14,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
     }
     buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            minifyEnabled false
+            debuggable true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -57,8 +66,8 @@ dependencies {
     compile libraries.retrofitRxJavaAdapter
     compile libraries.jsoup
 
-    compile libraries.butterknife
-    annotationProcessor libraries.butterknifeProcessor
+    compile libraries.butterKnife
+    apt libraries.butterKnifeProcessor
 
     compile libraries.timber
 
@@ -74,6 +83,7 @@ dependencies {
     testCompile libraries.hamcrest
     testCompile libraries.mockito
     testCompile libraries.robolectric
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 configurations.all {

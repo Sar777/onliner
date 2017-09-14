@@ -16,6 +16,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
+        buildConfigField "String", "DATABASE_NAME", "\"${database_name}\""
+        buildConfigField "Integer", "DATABASE_VERSION", "${database_version}"
     }
     buildTypes {
         debug {
@@ -57,9 +59,9 @@ dependencies {
     compile libraries.moxyAppCompat
     apt libraries.moxyCompiler
 
-    //compile libraries.storio
-    //compile libraries.storioAnnotations
-    //apt libraries.storioApt
+    compile libraries.storio
+    compile libraries.storioAnnotations
+    apt libraries.storioApt
 
     compile libraries.retrofit
     compile libraries.retrofitGsonConverter

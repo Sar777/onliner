@@ -23,7 +23,6 @@ android {
             minifyEnabled false
             debuggable true
         }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -45,6 +44,7 @@ dependencies {
     compile libraries.supportAppCompat
     compile libraries.supportDesign
     compile libraries.supportCardView
+    compile libraries.constraintLayout
     compile libraries.customTabs
 
     compile libraries.dagger
@@ -69,21 +69,19 @@ dependencies {
     compile libraries.butterKnife
     apt libraries.butterKnifeProcessor
 
-    compile libraries.timber
-
     compile libraries.glide
 
     // Developer Tools
     debugCompile libraries.okHttpLoggingInterceptor
     debugCompile libraries.stetho
     debugCompile libraries.stethoOkHttp
+    debugCompile libraries.timber
 
     // Testing
     testCompile libraries.junit
     testCompile libraries.hamcrest
     testCompile libraries.mockito
     testCompile libraries.robolectric
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 configurations.all {

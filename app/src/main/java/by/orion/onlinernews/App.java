@@ -8,7 +8,6 @@ import by.orion.onlinernews.di.components.ApplicationComponent;
 import by.orion.onlinernews.di.components.DaggerApplicationComponent;
 import by.orion.onlinernews.di.modules.ApplicationModule;
 import by.orion.onlinernews.di.modules.DataModule;
-import timber.log.Timber;
 
 public class App extends Application {
 
@@ -18,10 +17,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        if (BuildConfig.DEBUG) {
-            Timber.plant(new Timber.DebugTree());
-        }
 
         instance = this;
         applicationComponent = buildComponent();

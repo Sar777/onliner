@@ -8,6 +8,8 @@ import by.orion.onlinernews.di.components.ApplicationComponent;
 import by.orion.onlinernews.di.components.DaggerApplicationComponent;
 import by.orion.onlinernews.di.modules.ApplicationModule;
 import by.orion.onlinernews.di.modules.DataModule;
+import by.orion.onlinernews.di.modules.DbModule;
+import by.orion.onlinernews.di.modules.NetModule;
 
 public class App extends Application {
 
@@ -27,6 +29,8 @@ public class App extends Application {
         return DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .dataModule(new DataModule(BuildConfig.BASE_DOMAIN))
+                .netModule(new NetModule())
+                .dbModule(new DbModule())
                 .build();
     }
 

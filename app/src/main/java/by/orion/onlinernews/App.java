@@ -29,7 +29,7 @@ public class App extends Application {
         return DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .dataModule(new DataModule(BuildConfig.BASE_DOMAIN))
-                .netModule(new NetModule())
+                .netModule(new NetModule(BuildConfig.BASE_DOMAIN))
                 .dbModule(new DbModule())
                 .build();
     }

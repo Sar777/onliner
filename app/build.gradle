@@ -65,7 +65,9 @@ dependencies {
     compile libraries.retrofit
     compile libraries.retrofitGsonConverter
     compile libraries.retrofitRxJavaAdapter
-    compile libraries.jsoup
+
+    compile libraries.jspoon
+    compile libraries.jspoonConverter
 
     compile libraries.butterKnife
     apt libraries.butterKnifeProcessor

@@ -63,7 +63,7 @@ ext.libraries = [
         timber                  : "com.jakewharton.timber:timber:$versions.timber",
 
         jspoon                  : "pl.droidsonroids:jspoon:$versions.jspoon",
-        jspoonConverter         : "pl.droidsonroids.retrofit2:converter-jspoon:$versions.jspoon",
+        jspoonConverter         : "pl.droidsonroids.retrofit2:converter-jspoon:$versions.jspoonConverter",
 
         // Developer Tools
         stetho                  : "com.facebook.stetho:stetho:$versions.stetho",

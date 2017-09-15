@@ -2,7 +2,6 @@ package by.orion.onlinernews;
 
 import com.facebook.stetho.Stetho;
 
-import hugo.weaving.DebugLog;
 import timber.log.Timber;
 
 public class DebugApp extends App {
@@ -15,12 +14,10 @@ public class DebugApp extends App {
         initTimber();
     }
 
-    @DebugLog
     private void initTimber() {
         Timber.plant(new Timber.DebugTree());
     }
 
-    @DebugLog
     private void initStetho() {
         Stetho.InitializerBuilder initializerBuilder = Stetho.newInitializerBuilder(this);
         // Enable Chrome DevTools

@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import javax.inject.Inject;
 
 import by.orion.onlinernews.presentation.common.rx.RxSchedulersProvider;
-import hugo.weaving.DebugLog;
 import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
 import io.reactivex.schedulers.Schedulers;
@@ -29,7 +28,6 @@ public class SplashPresenter extends MvpPresenter<SplashView> {
         this.rxSchedulersProvider = rxSchedulersProvider;
     }
 
-    @DebugLog
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();

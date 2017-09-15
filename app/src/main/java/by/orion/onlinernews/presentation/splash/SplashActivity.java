@@ -12,7 +12,6 @@ import by.orion.onlinernews.di.components.presentation.DaggerSplashPresenterComp
 import by.orion.onlinernews.di.components.presentation.SplashPresenterComponent;
 import by.orion.onlinernews.di.modules.presentation.SplashPresenterModule;
 import by.orion.onlinernews.presentation.main.MainActivity;
-import hugo.weaving.DebugLog;
 
 public class SplashActivity extends MvpAppCompatActivity implements SplashView {
 
@@ -25,19 +24,16 @@ public class SplashActivity extends MvpAppCompatActivity implements SplashView {
         setContentView(R.layout.activity_splash);
     }
 
-    @DebugLog
     @Override
     public void showError() {
 
     }
 
-    @DebugLog
     @Override
     public void hideError() {
 
     }
 
-    @DebugLog
     @Override
     public void goToMainScreen() {
         startActivity(MainActivity.newIntent(this));

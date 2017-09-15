@@ -10,13 +10,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
+import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import by.orion.onlinernews.App;
 import by.orion.onlinernews.R;
-import hugo.weaving.DebugLog;
+import by.orion.onlinernews.di.components.presentation.DaggerMainPresenterComponent;
+import by.orion.onlinernews.di.components.presentation.MainPresenterComponent;
+import by.orion.onlinernews.di.modules.presentation.MainPresenterModule;
+import by.orion.onlinernews.presentation.common.models.ArticleCategory;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView, NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,6 +35,12 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
 
     @BindView(R.id.nav_view_main)
     NavigationView navigationView;
+
+    @BindView(R.id.layout_content_main)
+    ViewGroup viewGroupRoot;
+
+    @InjectPresenter
+    MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,35 +64,93 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        displayScreen(item);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @DebugLog
     @Override
     public void showError() {
 
     }
 
-    @DebugLog
     @Override
     public void hideError() {
 
     }
 
-    @DebugLog
+    @Override
+    public void showPeople() {
+
+    }
+
+    @Override
+    public void showOpinions() {
+
+    }
+
+    @Override
+    public void showAuto() {
+
+    }
+
+    @Override
+    public void showTech() {
+
+    }
+
+    @Override
+    public void showRealt() {
+
+    }
+
     private void initToolbar() {
         setSupportActionBar(toolbar);
     }
 
-    @DebugLog
     private void initView() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void displayScreen(@NonNull MenuItem item) {
+        ArticleCategory category = ArticleCategory.UNKNOWN;
+        switch (item.getItemId()) {
+            case R.id.nav_people:
+                category = ArticleCategory.PEOPLE;
+                break;
+            case R.id.nav_opinions:
+                category = ArticleCategory.OPINIONS;
+                break;
+            case R.id.nav_auto:
+                category = ArticleCategory.AUTO;
+                break;
+            case R.id.nav_tech:
+                category = ArticleCategory.TECH;
+                break;
+            case R.id.nav_realt:
+                category = ArticleCategory.REALT;
+                break;
+            default:
+                break;
+        }
+
+        toolbar.setTitle(item.getTitle());
+        presenter.onClickCategory(category);
+    }
+
+    @ProvidePresenter
+    MainPresenter providePresenter() {
+        MainPresenterComponent mainPresenterComponent = DaggerMainPresenterComponent.builder()
+                .applicationComponent(App.getComponent())
+                .mainPresenterModule(new MainPresenterModule())
+                .build();
+
+        return mainPresenterComponent.getPresenter();
     }
 
     @NonNull

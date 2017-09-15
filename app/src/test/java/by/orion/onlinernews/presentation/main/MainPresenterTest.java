@@ -7,6 +7,7 @@ import org.mockito.MockitoAnnotations;
 
 import by.orion.onlinernews.presentation.common.models.ArticleCategory;
 
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class MainPresenterTest {
@@ -66,5 +67,18 @@ public class MainPresenterTest {
 
         // assert
         verify(mainView$$StateMock).showRealt();
+    }
+
+    @Test
+    public void onClickCategory_shouldShowArticleCategoryUnknown() {
+        //act
+        mainPresenter.onClickCategory(ArticleCategory.UNKNOWN);
+
+        // assert
+        verify(mainView$$StateMock, times(0)).showPeople();
+        verify(mainView$$StateMock, times(0)).showOpinions();
+        verify(mainView$$StateMock, times(0)).showAuto();
+        verify(mainView$$StateMock, times(0)).showTech();
+        verify(mainView$$StateMock, times(0)).showRealt();
     }
 }

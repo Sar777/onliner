@@ -7,12 +7,13 @@ import by.orion.onlinernews.di.modules.ApplicationModule;
 import by.orion.onlinernews.di.modules.DataSourceModule;
 import by.orion.onlinernews.di.modules.DbModule;
 import by.orion.onlinernews.di.modules.NetModule;
+import by.orion.onlinernews.di.modules.OkHttpInterceptorsModule;
 import by.orion.onlinernews.di.modules.RepositoryModule;
 import by.orion.onlinernews.di.modules.ServiceModule;
 import dagger.Component;
 
 @Singleton
-@Component(modules = { ApplicationModule.class, RepositoryModule.class, DataSourceModule.class, NetModule.class, ServiceModule.class, DbModule.class})
+@Component(modules = { ApplicationModule.class, RepositoryModule.class, DataSourceModule.class, NetModule.class, ServiceModule.class, DbModule.class, OkHttpInterceptorsModule.class})
 public interface ApplicationComponent {
 
     ArticlesRepository provideArticlesRepository();

@@ -1,4 +1,4 @@
-package by.orion.onlinernews.di;
+package by.orion.onlinernews.di.qualifiers;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -7,5 +7,5 @@ import javax.inject.Qualifier;
 
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
-public @interface LocalDataSource {
+public @interface RemoteDataSource {
 }

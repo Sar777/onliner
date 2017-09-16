@@ -1,13 +1,16 @@
 package by.orion.onlinernews.common.network.services;
 
-import java.util.List;
+import android.support.annotation.NonNull;
 
-import by.orion.onlinernews.data.models.impl.RemoteArticle;
+import by.orion.onlinernews.common.network.HtmlJspoon;
+import by.orion.onlinernews.data.models.impl.ArticlesPage;
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Url;
 
 public interface BaseService {
 
+    @HtmlJspoon
     @GET
-    Single<List<RemoteArticle>> getArticles();
+    Single<ArticlesPage> getArticles(@NonNull @Url String url);
 }

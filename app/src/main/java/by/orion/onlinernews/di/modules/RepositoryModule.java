@@ -7,8 +7,8 @@ import javax.inject.Singleton;
 import by.orion.onlinernews.data.datasource.impl.ArticlesDataSource;
 import by.orion.onlinernews.data.repository.ArticlesRepository;
 import by.orion.onlinernews.data.repository.impl.ArticlesRepositoryImpl;
-import by.orion.onlinernews.di.LocalDataSource;
-import by.orion.onlinernews.di.RemoteDataSource;
+import by.orion.onlinernews.di.qualifiers.LocalDataSource;
+import by.orion.onlinernews.di.qualifiers.RemoteDataSource;
 import dagger.Module;
 import dagger.Provides;
 

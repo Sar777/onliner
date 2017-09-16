@@ -3,18 +3,27 @@ package by.orion.onlinernews.data.models.impl;
 import android.support.annotation.NonNull;
 
 import by.orion.onlinernews.data.models.Article;
+import pl.droidsonroids.jspoon.annotation.Selector;
 
 public class RemoteArticle implements Article {
 
+    @Selector("div[class=news-tidings__clamping] > div[class=news-tidings__subtitle]")
     @NonNull
     private String title;
 
+    @Selector("div[class=news-tidings__clamping] > div[class^=news-tidings__speech]")
     @NonNull
     private String description;
 
+    @Selector(value = "div[class=^news-tidings__image]", attr = "style")
     @NonNull
-    private Integer views;
+    private String imageUrl;
 
+    @Selector(value = "div[class=news-tidings__group] > div", defValue = "-1")
+    @NonNull
+    private String views;
+
+    @Selector(value = "div[class=news-tidings__group] > a", defValue = "-1")
     @NonNull
     private Integer comments;
 
@@ -24,6 +33,7 @@ public class RemoteArticle implements Article {
     @NonNull
     private Long date;
 
+    @Selector(value = "div[class=news-tidings__control] > div[class*=news-tidings__button_video]", defValue = "false")
     @NonNull
     private Boolean hasUpdate;
 
@@ -44,7 +54,7 @@ public class RemoteArticle implements Article {
 
     @Override
     @NonNull
-    public Integer getViews() {
+    public String getViews() {
         return views;
     }
 

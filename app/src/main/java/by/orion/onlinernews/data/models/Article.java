@@ -11,7 +11,7 @@ public interface Article {
     String getDescription();
 
     @NonNull
-    Integer getViews();
+    String getViews();
 
     @NonNull
     Integer getComments();

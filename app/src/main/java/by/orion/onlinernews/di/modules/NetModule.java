@@ -6,14 +6,18 @@ import android.support.annotation.NonNull;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import by.orion.onlinernews.common.network.convertors.RetrofitUniversalConverterFactory;
+import by.orion.onlinernews.di.qualifiers.OkHttpInterceptors;
+import by.orion.onlinernews.di.qualifiers.OkHttpNetworkInterceptors;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
@@ -58,8 +62,20 @@ public class NetModule {
 
     @Provides
     @NonNull
-    OkHttpClient provideOkHttpClient(@NonNull Cache cache) {
-        return new OkHttpClient.Builder()
+    OkHttpClient provideOkHttpClient(@NonNull Cache cache,
+                                     @OkHttpInterceptors @NonNull List<Interceptor> interceptors,
+                                     @OkHttpNetworkInterceptors @NonNull List<Interceptor> networkInterceptors) {
+
+        final OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
+        for (Interceptor interceptor : interceptors) {
+            okHttpBuilder.addInterceptor(interceptor);
+        }
+
+        for (Interceptor networkInterceptor : networkInterceptors) {
+            okHttpBuilder.addNetworkInterceptor(networkInterceptor);
+        }
+
+        return okHttpBuilder
                 .connectTimeout(5, TimeUnit.SECONDS) // Default 10 secs
                 .writeTimeout(20, TimeUnit.SECONDS) // Default 10 secs
                 .readTimeout(20, TimeUnit.SECONDS) // Default 10 secs

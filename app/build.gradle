@@ -15,6 +15,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
+        buildConfigField "String", "PEOPLE_SUBDOMAIN", "\"${people_subdomain}\""
+        buildConfigField "String", "OPINIONS_SUBDOMAIN", "\"${opinions_subdomain}\""
+        buildConfigField "String", "AUTO_SUBDOMAIN", "\"${auto_subdomain}\""
+        buildConfigField "String", "TECH_SUBDOMAIN", "\"${tech_subdomain}\""
+        buildConfigField "String", "REALT_SUBDOMAIN", "\"${realt_subdomain}\""
         buildConfigField "String", "DATABASE_NAME", "\"${database_name}\""
         buildConfigField "Integer", "DATABASE_VERSION", "${database_version}"
     }

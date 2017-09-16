@@ -20,10 +20,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinernews.App;
 import by.orion.onlinernews.R;
+import by.orion.onlinernews.common.utils.FragmentUtils;
 import by.orion.onlinernews.di.components.presentation.DaggerMainPresenterComponent;
 import by.orion.onlinernews.di.components.presentation.MainPresenterComponent;
 import by.orion.onlinernews.di.modules.presentation.MainPresenterModule;
 import by.orion.onlinernews.presentation.common.models.ArticleCategory;
+import by.orion.onlinernews.presentation.main.fragments.ArticlesFragment;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView, NavigationView.OnNavigationItemSelectedListener {
 
@@ -82,27 +84,27 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
 
     @Override
     public void showPeople() {
-
+        FragmentUtils.replaceFragment(ArticlesFragment.newInstance(ArticleCategory.PEOPLE), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     @Override
     public void showOpinions() {
-
+        FragmentUtils.replaceFragment(ArticlesFragment.newInstance(ArticleCategory.OPINIONS), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     @Override
     public void showAuto() {
-
+        FragmentUtils.replaceFragment(ArticlesFragment.newInstance(ArticleCategory.AUTO), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     @Override
     public void showTech() {
-
+        FragmentUtils.replaceFragment(ArticlesFragment.newInstance(ArticleCategory.TECH), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     @Override
     public void showRealt() {
-
+        FragmentUtils.replaceFragment(ArticlesFragment.newInstance(ArticleCategory.REALT), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     private void initToolbar() {

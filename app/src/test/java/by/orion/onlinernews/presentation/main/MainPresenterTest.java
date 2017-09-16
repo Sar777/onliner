@@ -2,14 +2,17 @@ package by.orion.onlinernews.presentation.main;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import by.orion.onlinernews.AppTestRunner;
 import by.orion.onlinernews.presentation.common.models.ArticleCategory;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+@RunWith(AppTestRunner.class)
 public class MainPresenterTest {
 
     @Mock

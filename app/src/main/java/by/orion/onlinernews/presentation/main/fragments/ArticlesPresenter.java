@@ -49,10 +49,12 @@ public class ArticlesPresenter extends MvpPresenter<ArticlesView> {
     }
 
     private void onArticlesListSuccess(@NonNull List<Article> articles) {
-
+        getViewState().hideProgress();
+        getViewState().showArticles();
     }
 
     private void onArticlesListError(@NonNull Throwable throwable) {
-
+        getViewState().hideProgress();
+        getViewState().showError();
     }
 }

@@ -37,5 +37,4 @@ public class OkHttpInterceptorsModule {
     public List<Interceptor> provideOkHttpNetworkInterceptors() {
         return singletonList(new StethoInterceptor());
     }
-
 }

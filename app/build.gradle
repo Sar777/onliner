@@ -74,6 +74,9 @@ dependencies {
 
     compile libraries.glide
 
+    compile libraries.autoValue
+    apt libraries.autoValue
+
     // Developer Tools
     debugCompile libraries.okHttpLoggingInterceptor
     debugCompile libraries.stetho

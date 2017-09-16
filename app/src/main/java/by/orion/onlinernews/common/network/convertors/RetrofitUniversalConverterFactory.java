@@ -6,7 +6,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
 import by.orion.onlinernews.common.network.Gson;
-import by.orion.onlinernews.common.network.Jspoon;
+import by.orion.onlinernews.common.network.HtmlJspoon;
 import by.orion.onlinernews.common.network.String;
 import okhttp3.ResponseBody;
 import pl.droidsonroids.retrofit2.JspoonConverterFactory;
@@ -38,7 +38,7 @@ public class RetrofitUniversalConverterFactory extends Converter.Factory {
                 return gson.responseBodyConverter(type, annotations, retrofit);
             } else if (annotation.annotationType() == String.class) {
                 return string.responseBodyConverter(type, annotations, retrofit);
-            } else if (annotation.annotationType() == Jspoon.class) {
+            } else if (annotation.annotationType() == HtmlJspoon.class) {
                 return jspoon.responseBodyConverter(type, annotations, retrofit);
             }
         }

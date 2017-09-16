@@ -7,9 +7,11 @@ import android.support.annotation.NonNull;
 import by.orion.onlinernews.di.components.ApplicationComponent;
 import by.orion.onlinernews.di.components.DaggerApplicationComponent;
 import by.orion.onlinernews.di.modules.ApplicationModule;
-import by.orion.onlinernews.di.modules.DataModule;
+import by.orion.onlinernews.di.modules.DataSourceModule;
 import by.orion.onlinernews.di.modules.DbModule;
 import by.orion.onlinernews.di.modules.NetModule;
+import by.orion.onlinernews.di.modules.RepositoryModule;
+import by.orion.onlinernews.di.modules.ServiceModule;
 
 public class App extends Application {
 
@@ -28,8 +30,10 @@ public class App extends Application {
     public ApplicationComponent buildComponent() {
         return DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
-                .dataModule(new DataModule(BuildConfig.BASE_DOMAIN))
+                .dataSourceModule(new DataSourceModule())
+                .repositoryModule(new RepositoryModule())
                 .netModule(new NetModule(BuildConfig.BASE_DOMAIN))
+                .serviceModule(new ServiceModule())
                 .dbModule(new DbModule())
                 .build();
     }

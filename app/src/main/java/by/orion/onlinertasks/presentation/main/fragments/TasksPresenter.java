@@ -21,6 +21,9 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
     @NonNull
     private final TasksInteractor tasksInteractor;
 
+    private int page;
+    private int lastPage;
+
     @Inject
     public TasksPresenter(@NonNull RxSchedulersProvider rxSchedulersProvider,
                           @NonNull TasksInteractor tasksInteractor) {
@@ -33,7 +36,7 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
         super.onFirstViewAttach();
 
         getViewState().hideError();
-        getViewState().hideArticles();
+        getViewState().hideTasks();
         getViewState().showProgress();
 
         tasksInteractor.getAllTasks(new TasksRequestParams())
@@ -42,10 +45,16 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
     }
 
     private void onAllTasksSuccess(@NonNull TasksPage tasksPage) {
+        page = tasksPage.page().current();
+        lastPage = tasksPage.page().last();
 
+        getViewState().hideProgress();
+        getViewState().showTasks();
+        getViewState().addTasks(tasksPage.tasks());
     }
 
     private void onAllTasksError(@NonNull Throwable throwable) {
-
+        getViewState().hideProgress();
+        getViewState().showError();
     }
 }

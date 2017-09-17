@@ -3,24 +3,8 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_people"
-            android:icon="@drawable/ic_nav_menu_people"
-            android:title="@string/action_nav_menu_people" />
-        <item
-            android:id="@+id/nav_opinions"
-            android:icon="@drawable/ic_nav_menu_opinions"
-            android:title="@string/action_nav_menu_opinions" />
-        <item
-            android:id="@+id/nav_auto"
-            android:icon="@drawable/ic_nav_menu_auto"
-            android:title="@string/action_nav_menu_auto" />
-        <item
-            android:id="@+id/nav_tech"
-            android:icon="@drawable/ic_nav_menu_tech"
-            android:title="@string/action_nav_menu_tech" />
-        <item
-            android:id="@+id/nav_realt"
-            android:icon="@drawable/ic_nav_menu_realt"
-            android:title="@string/action_nav_menu_realt" />
+            android:id="@+id/nav_all_tasks"
+            android:icon="@drawable/ic_nav_menu_all_tasks"
+            android:title="@string/action_nav_menu_all_tasks" />
     </group>
 </menu>

@@ -17,9 +17,6 @@ ext.versions = [
         butterKnife                  : '8.8.1',
         timber                       : '4.5.1',
 
-        jspoon                       : '1.0.0',
-        jspoonConverter              : '1.0.0',
-
         autoValue                    : '1.2',
 
         stetho                       : '1.3.1',
@@ -63,9 +60,6 @@ ext.libraries = [
         butterKnifeProcessor    : "com.jakewharton:butterknife-compiler:$versions.butterKnife",
 
         timber                  : "com.jakewharton.timber:timber:$versions.timber",
-
-        jspoon                  : "pl.droidsonroids:jspoon:$versions.jspoon",
-        jspoonConverter         : "pl.droidsonroids.retrofit2:converter-jspoon:$versions.jspoonConverter",
 
         autoValue               : "com.google.auto.value:auto-value:$versions.autoValue",
 

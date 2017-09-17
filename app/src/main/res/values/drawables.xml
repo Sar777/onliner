@@ -3,9 +3,5 @@
     <item name="bg_splash" type="drawable">@drawable/background_splash</item>
     <item name="ic_splash_logo" type="drawable">@drawable/onliner_logo</item>
     <!-- Main Screen -->
-    <item name="ic_nav_menu_people" type="drawable">@drawable/onliner_logo</item>
-    <item name="ic_nav_menu_opinions" type="drawable">@drawable/onliner_logo</item>
-    <item name="ic_nav_menu_auto" type="drawable">@drawable/onliner_logo</item>
-    <item name="ic_nav_menu_tech" type="drawable">@drawable/onliner_logo</item>
-    <item name="ic_nav_menu_realt" type="drawable">@drawable/onliner_logo</item>
+    <item name="ic_nav_menu_all_tasks" type="drawable">@drawable/onliner_logo</item>
 </resources>

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
-import by.orion.onlinertasks.common.adapters.AutoValueAdapterFactory;
+import by.orion.onlinertasks.common.adapters.AutoValueGsonFactory;
 import by.orion.onlinertasks.common.network.interceptors.HeadersInterceptor;
 import by.orion.onlinertasks.di.qualifiers.OkHttpInterceptors;
 import by.orion.onlinertasks.di.qualifiers.OkHttpNetworkInterceptors;
@@ -55,7 +55,7 @@ public class NetModule {
     @Provides
     @NonNull
     TypeAdapterFactory provideAutoValueGsonTypeAdapterFactory() {
-        return new AutoValueAdapterFactory();
+        return AutoValueGsonFactory.create();
     }
 
     @Provides

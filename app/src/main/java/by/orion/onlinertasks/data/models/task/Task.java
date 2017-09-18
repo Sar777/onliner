@@ -1,11 +1,12 @@
 package by.orion.onlinertasks.data.models.task;
 
+import android.support.annotation.Nullable;
+
 import com.google.auto.value.AutoValue;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
-import by.orion.onlinertasks.common.annotations.AutoGson;
-
-@AutoGson
 @AutoValue
 public abstract class Task {
 
@@ -19,12 +20,15 @@ public abstract class Task {
     public abstract String description();
 
     @SerializedName("image")
+    @Nullable
     public abstract Image image();
 
     @SerializedName("price")
+    @Nullable
     public abstract Price price();
 
     @SerializedName("executor_id")
+    @Nullable
     public abstract Integer executor_id();
 
     @SerializedName("status")
@@ -57,7 +61,7 @@ public abstract class Task {
     @SerializedName("permissions")
     public abstract Permissions permissions();
 
-    public static Task create(Integer id, String title, String description, Image image, Price price, Integer executor_id, String status, Integer proposals_qty, Location location, String deadline, String created_at, String url, String html_url, Author author, Section section, Permissions permissions) {
-        return new AutoValue_Task(id, title, description, image, price, executor_id, status, proposals_qty, location, deadline, created_at, url, html_url, author, section, permissions);
+    public static TypeAdapter<Task> typeAdapter(Gson gson) {
+        return new AutoValue_Task.GsonTypeAdapter(gson);
     }
 }

@@ -14,6 +14,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ['autovaluegson.defaultCollectionsToEmpty': 'true']
+            }
+        }
+
         buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
         buildConfigField "String", "DATABASE_NAME", "\"${database_name}\""
         buildConfigField "Integer", "DATABASE_VERSION", "${database_version}"
@@ -72,8 +78,13 @@ dependencies {
     compile libraries.glide
     annotationProcessor libraries.glideAnnotations
 
+    compile libraries.gson
+
     compile libraries.autoValue
     apt libraries.autoValue
+
+    apt libraries.autoValueGson
+    provided libraries.autoValueGson
 
     // Developer Tools
     debugCompile libraries.okHttpLoggingInterceptor

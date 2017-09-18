@@ -1,11 +1,10 @@
 package by.orion.onlinertasks.data.models.task;
 
 import com.google.auto.value.AutoValue;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
-import by.orion.onlinertasks.common.annotations.AutoGson;
-
-@AutoGson
 @AutoValue
 public abstract class Image {
 
@@ -21,7 +20,7 @@ public abstract class Image {
     @SerializedName("original")
     public abstract String _original();
 
-    public static Image create(String _280x280, String _640x320, String _2100x1200, String _original) {
-        return new AutoValue_Image(_280x280, _640x320, _2100x1200, _original);
+    public static TypeAdapter<Image> typeAdapter(Gson gson) {
+        return new AutoValue_Image.GsonTypeAdapter(gson);
     }
 }

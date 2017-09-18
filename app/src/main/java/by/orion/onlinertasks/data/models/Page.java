@@ -1,11 +1,10 @@
 package by.orion.onlinertasks.data.models;
 
 import com.google.auto.value.AutoValue;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
-import by.orion.onlinertasks.common.annotations.AutoGson;
-
-@AutoGson
 @AutoValue
 public abstract class Page {
 
@@ -21,7 +20,7 @@ public abstract class Page {
     @SerializedName("last")
     public abstract Integer last();
 
-    public static Page create(Integer limit, Integer items, Integer current, Integer last) {
-        return new AutoValue_Page(limit, items, current, last);
+    public static TypeAdapter<Page> typeAdapter(Gson gson) {
+        return new AutoValue_Page.GsonTypeAdapter(gson);
     }
 }

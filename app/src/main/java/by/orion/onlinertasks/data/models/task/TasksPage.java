@@ -1,14 +1,14 @@
 package by.orion.onlinertasks.data.models.task;
 
 import com.google.auto.value.AutoValue;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import by.orion.onlinertasks.common.annotations.AutoGson;
 import by.orion.onlinertasks.data.models.Page;
 
-@AutoGson
 @AutoValue
 public abstract class TasksPage {
 
@@ -21,7 +21,7 @@ public abstract class TasksPage {
     @SerializedName("page")
     public abstract Page page();
 
-    public static TasksPage create(List<Task> tasks, Integer total, Page page) {
-        return new AutoValue_TasksPage(tasks, total, page);
+    public static TypeAdapter<TasksPage> typeAdapter(Gson gson) {
+        return new AutoValue_TasksPage.GsonTypeAdapter(gson);
     }
 }

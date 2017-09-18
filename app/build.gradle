@@ -20,6 +20,10 @@ android {
             }
         }
 
+        lintOptions {
+            abortOnError false
+        }
+
         buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
         buildConfigField "String", "DATABASE_NAME", "\"${database_name}\""
         buildConfigField "Integer", "DATABASE_VERSION", "${database_version}"

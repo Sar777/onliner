@@ -1,10 +1,11 @@
 <resources>
     <!-- Common -->
     <string name="app_name">onliner.news</string>
+    <string name="common_before">Before</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <!-- Main Screen -->
     <string name="action_nav_menu_all_tasks">All Tasks</string>
+    <!-- Task Item -->
 </resources>

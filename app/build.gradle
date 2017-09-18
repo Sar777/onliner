@@ -70,6 +70,7 @@ dependencies {
     apt libraries.butterKnifeProcessor
 
     compile libraries.glide
+    annotationProcessor libraries.glideAnnotations
 
     compile libraries.autoValue
     apt libraries.autoValue
@@ -79,6 +80,9 @@ dependencies {
     debugCompile libraries.stetho
     debugCompile libraries.stethoOkHttp
     debugCompile libraries.timber
+
+    // Utils
+    compile libraries.dateTimeUtils
 
     // Testing
     testCompile libraries.junit

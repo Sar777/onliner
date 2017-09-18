@@ -10,12 +10,12 @@ import by.orion.onlinertasks.common.annotations.AutoGson;
 public abstract class Price {
 
     @SerializedName("amount")
-    public abstract Boolean amount();
+    public abstract Integer amount();
 
     @SerializedName("currency")
-    public abstract Boolean currency();
+    public abstract String currency();
 
-    public static Price create(Boolean amount, Boolean currency) {
+    public static Price create(Integer amount, String currency) {
         return new AutoValue_Price(amount, currency);
     }
 }

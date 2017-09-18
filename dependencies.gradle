@@ -6,7 +6,7 @@ ext.versions = [
 
         supportLibs                  : '25.4.0',
         constraintLayout             : '1.0.2',
-        glide                        : '3.7.0',
+        glide                        : '4.1.1',
 
         dagger                       : '2.6',
         rxJava                       : '2.0.1',
@@ -20,6 +20,8 @@ ext.versions = [
         autoValue                    : '1.2',
 
         stetho                       : '1.3.1',
+
+        dateTimeUtils                : '1.0',
 
         junit                        : '4.12',
         hamcrest                     : '1.3',
@@ -35,6 +37,7 @@ ext.libraries = [
         customTabs              : "com.android.support:customtabs:$versions.supportLibs",
 
         glide                   : "com.github.bumptech.glide:glide:$versions.glide",
+        glideAnnotations        : "com.github.bumptech.glide:compiler:$versions.glide",
 
         dagger                  : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler          : "com.google.dagger:dagger-compiler:$versions.dagger",
@@ -66,6 +69,9 @@ ext.libraries = [
         // Developer Tools
         stetho                  : "com.facebook.stetho:stetho:$versions.stetho",
         stethoOkHttp            : "com.facebook.stetho:stetho-okhttp3:$versions.stetho",
+
+        // Utils
+        dateTimeUtils           : "com.github.thunder413:DateTimeUtils:$versions.dateTimeUtils",
 
         // Test dependencies
         junit                   : "junit:junit:$versions.junit",

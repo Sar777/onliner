@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="16dp"
+    android:height="14dp"
+    android:viewportWidth="16"
+    android:viewportHeight="14">
+
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 1 2 L 15 2 Q 16 2 16 3 L 16 13 Q 16 14 15 14 L 1 14 Q 0 14 0 13 L 0 3 Q 0 2 1 2 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 1 2 L 15 2 Q 16 2 16 3 L 16 13 Q 16 14 15 14 L 1 14 Q 0 14 0 13 L 0 3 Q 0 2 1 2 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillColor="#555555"
+        android:fillType="evenOdd"
+        android:strokeWidth="1"
+        android:pathData="M 1 7 H 6 V 8 H 1 V 7 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillColor="#555555"
+        android:fillType="evenOdd"
+        android:strokeWidth="1"
+        android:pathData="M 10 7 H 15 V 8 H 10 V 7 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 5 0 L 11 0 Q 12 0 12 1 L 12 2 Q 12 3 11 3 L 5 3 Q 4 3 4 2 L 4 1 Q 4 0 5 0 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 5 0 L 11 0 Q 12 0 12 1 L 12 2 Q 12 3 11 3 L 5 3 Q 4 3 4 2 L 4 1 Q 4 0 5 0 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 7 6 L 9 6 Q 10 6 10 7 L 10 8 Q 10 9 9 9 L 7 9 Q 6 9 6 8 L 6 7 Q 6 6 7 6 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillType="evenOdd"
+        android:strokeColor="#555555"
+        android:strokeWidth="2"
+        android:pathData="M 7 6 L 9 6 Q 10 6 10 7 L 10 8 Q 10 9 9 9 L 7 9 Q 6 9 6 8 L 6 7 Q 6 6 7 6 Z"
+        tools:targetApi="n" />
+</vector>

@@ -25,13 +25,13 @@ public abstract class Task {
     public abstract Price price();
 
     @SerializedName("executor_id")
-    public abstract Integer executorId();
+    public abstract Integer executor_id();
 
     @SerializedName("status")
     public abstract String status();
 
     @SerializedName("proposals_qty")
-    public abstract Integer proposalsQty();
+    public abstract Integer proposals_qty();
 
     @SerializedName("location")
     public abstract Location location();
@@ -40,13 +40,13 @@ public abstract class Task {
     public abstract String deadline();
 
     @SerializedName("created_at")
-    public abstract String createdAt();
+    public abstract String created_at();
 
     @SerializedName("url")
     public abstract String url();
 
     @SerializedName("html_url")
-    public abstract String htmlUrl();
+    public abstract String html_url();
 
     @SerializedName("author")
     public abstract Author author();
@@ -57,7 +57,7 @@ public abstract class Task {
     @SerializedName("permissions")
     public abstract Permissions permissions();
 
-    public static Task create(Integer id, String title, String description, Image image, Price price, Integer executorId, String status, Integer proposalsQty, Location location, String deadline, String createdAt, String url, String htmlUrl, Author author, Section section, Permissions permissions) {
-        return new AutoValue_Task(id, title, description, image, price, executorId, status, proposalsQty, location, deadline, createdAt, url, htmlUrl, author, section, permissions);
+    public static Task create(Integer id, String title, String description, Image image, Price price, Integer executor_id, String status, Integer proposals_qty, Location location, String deadline, String created_at, String url, String html_url, Author author, Section section, Permissions permissions) {
+        return new AutoValue_Task(id, title, description, image, price, executor_id, status, proposals_qty, location, deadline, created_at, url, html_url, author, section, permissions);
     }
 }

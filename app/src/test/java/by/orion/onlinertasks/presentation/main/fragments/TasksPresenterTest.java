@@ -1,6 +1,5 @@
 package by.orion.onlinertasks.presentation.main.fragments;
 
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,8 +40,7 @@ public class TasksPresenterTest {
 
     @Test
     public void task_shouldShowProgressHideErrorHideTasks() {
-        TaskPage taskPageMock = mock(TaskPage.class);
-        when(tasksInteractorMock.getAllTasks(any())).thenReturn(Single.just(taskPageMock));
+        when(tasksInteractorMock.getAllTasks(any())).thenReturn(Single.just(mock(TaskPage.class)));
 
         // act
         tasksPresenter.onFirstViewAttach();
@@ -55,8 +53,7 @@ public class TasksPresenterTest {
 
     @Test
     public void tasks_shouldLoadTasksSuccessOnFirstViewAttach() {
-        TaskPage taskPageMock = mock(TaskPage.class);
-        when(tasksInteractorMock.getAllTasks(any())).thenReturn(Single.just(taskPageMock));
+        when(tasksInteractorMock.getAllTasks(any())).thenReturn(Single.just(mock(TaskPage.class)));
 
         //act
         tasksPresenter.onFirstViewAttach();

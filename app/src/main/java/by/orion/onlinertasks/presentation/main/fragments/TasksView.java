@@ -15,6 +15,7 @@ public interface TasksView extends BaseMvpView {
 
     String TAG_PROGRESS = "TAG_PROGRESS";
     String TAG_TASK = "TAG_TASK";
+    String TAG_LOAD_MORE_TASKS = "TAG_LOAD_MORE_TASKS";
 
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_PROGRESS)
     void showProgress();
@@ -29,4 +30,10 @@ public interface TasksView extends BaseMvpView {
     void hideTasks();
 
     void addTasks(@NonNull List<TaskItem> tasks);
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_LOAD_MORE_TASKS)
+    void enableLoadMoreTasks();
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_LOAD_MORE_TASKS)
+    void disableLoadMoreTasks();
 }

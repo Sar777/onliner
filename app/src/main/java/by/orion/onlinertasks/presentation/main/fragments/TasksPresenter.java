@@ -31,6 +31,14 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
         this.tasksInteractor = tasksInteractor;
     }
 
+    public void onLoadMoreTasksRequest() {
+        getViewState().disableLoadMoreTasks();
+
+        loadTasks(TasksRequestParams.builder()
+                .page(page + 1)
+                .build());
+    }
+
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
@@ -39,7 +47,11 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
         getViewState().hideTasks();
         getViewState().showProgress();
 
-        tasksInteractor.getAllTasks(new TasksRequestParams())
+        loadTasks(TasksRequestParams.builder().build());
+    }
+
+    private void loadTasks(@NonNull TasksRequestParams params) {
+        tasksInteractor.getAllTasks(params)
                 .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
                 .subscribe(this::onAllTasksSuccess, this::onAllTasksError);
     }
@@ -47,6 +59,10 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
     private void onAllTasksSuccess(@NonNull TaskPage taskPage) {
         page = taskPage.page();
         lastPage = taskPage.lastPage();
+
+        if (page < lastPage) {
+            getViewState().enableLoadMoreTasks();
+        }
 
         getViewState().hideProgress();
         getViewState().showTasks();

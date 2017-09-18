@@ -19,12 +19,11 @@ import java.util.Random;
 
 import butterknife.BindView;
 import by.orion.onlinertasks.R;
-import by.orion.onlinertasks.common.adapters.holders.AbstractViewHolder;
+import by.orion.onlinertasks.common.adapters.holders.AbstractRecyclerViewHolder;
 import by.orion.onlinertasks.common.utils.ImageUtils;
-import by.orion.onlinertasks.presentation.main.fragments.models.AuthorItem;
 import by.orion.onlinertasks.presentation.main.fragments.models.TaskItem;
 
-public class TaskViewHolder extends AbstractViewHolder<TaskItem> {
+public class TaskViewHolder extends AbstractRecyclerViewHolder<TaskItem> {
 
     @BindView(R.id.imageview_task_preview)
     ImageView imageViewPreview;
@@ -58,14 +57,12 @@ public class TaskViewHolder extends AbstractViewHolder<TaskItem> {
     }
 
     @Override
-    public void onBindHolder(@NonNull TaskItem task) {
+    public void onBindViewHolder(@NonNull TaskItem task) {
         Context context = itemView.getContext();
 
-        AuthorItem author = task.author();
-
-        if (!TextUtils.isEmpty(author.photo())) {
+        if (!TextUtils.isEmpty(task.imageUrl())) {
             Glide.with(context)
-                    .load(author.photo())
+                    .load(task.imageUrl())
                     .apply(new RequestOptions().transform(new CircleCrop()))
                     .into(imageViewPreview);
         } else {

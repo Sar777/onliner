@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
-import by.orion.onlinertasks.data.models.task.Task;
+import by.orion.onlinertasks.common.adapters.EndlessScrollListener;
 import by.orion.onlinertasks.di.components.presentation.ArticlesPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.DaggerArticlesPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.TasksPresenterModule;
@@ -83,6 +83,22 @@ public class TasksFragment extends MvpAppCompatFragment implements TasksView {
     @Override
     public void addTasks(@NonNull List<TaskItem> tasks) {
         adapter.addAll(tasks);
+    }
+
+    @Override
+    public void enableLoadMoreTasks() {
+        recyclerView.addOnScrollListener(new EndlessScrollListener() {
+            @Override
+            protected void loadMore() {
+                adapter.addItem(null);
+                presenter.onLoadMoreTasksRequest();
+            }
+        });
+    }
+
+    @Override
+    public void disableLoadMoreTasks() {
+        recyclerView.clearOnScrollListeners();
     }
 
     @NonNull

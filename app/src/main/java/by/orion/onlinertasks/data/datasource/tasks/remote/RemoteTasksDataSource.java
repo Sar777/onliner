@@ -36,7 +36,7 @@ public class RemoteTasksDataSource implements TasksDataSource {
 
     @Override
     public Single<TasksPage> getAllTasks(@NonNull TasksRequestParams params) {
-        return service.getAllTasks();
+        return service.getAllTasks(params.page());
     }
 
     @Override

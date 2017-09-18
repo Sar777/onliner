@@ -4,11 +4,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import by.orion.onlinertasks.AppTestRunner;
 import by.orion.onlinertasks.presentation.common.models.MenuOption;
+
+import static org.mockito.Mockito.verify;
 
 @RunWith(AppTestRunner.class)
 public class MainPresenterTest {
@@ -31,6 +32,6 @@ public class MainPresenterTest {
         mainPresenter.onClickMenu(MenuOption.ALL_TASKS);
 
         // assert
-        Mockito.verify(mainView$$StateMock).showAllTasks();
+        verify(mainView$$StateMock).showAllTasks();
     }
 }

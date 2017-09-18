@@ -25,6 +25,7 @@ import by.orion.onlinertasks.di.components.presentation.ArticlesPresenterCompone
 import by.orion.onlinertasks.di.components.presentation.DaggerArticlesPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.TasksPresenterModule;
 import by.orion.onlinertasks.presentation.main.fragments.adapters.TasksAdapter;
+import by.orion.onlinertasks.presentation.main.fragments.models.TaskItem;
 
 public class TasksFragment extends MvpAppCompatFragment implements TasksView {
 
@@ -80,7 +81,7 @@ public class TasksFragment extends MvpAppCompatFragment implements TasksView {
     }
 
     @Override
-    public void addTasks(@NonNull List<Task> tasks) {
+    public void addTasks(@NonNull List<TaskItem> tasks) {
         adapter.addAll(tasks);
     }
 

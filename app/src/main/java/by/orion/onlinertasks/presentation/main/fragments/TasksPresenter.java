@@ -7,10 +7,10 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.models.task.TasksPage;
 import by.orion.onlinertasks.data.models.task.TasksRequestParams;
 import by.orion.onlinertasks.domain.interactors.TasksInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
+import by.orion.onlinertasks.presentation.main.fragments.models.TaskPage;
 
 @InjectViewState
 public class TasksPresenter extends MvpPresenter<TasksView> {
@@ -44,13 +44,13 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
                 .subscribe(this::onAllTasksSuccess, this::onAllTasksError);
     }
 
-    private void onAllTasksSuccess(@NonNull TasksPage tasksPage) {
-        page = tasksPage.page().current();
-        lastPage = tasksPage.page().last();
+    private void onAllTasksSuccess(@NonNull TaskPage taskPage) {
+        page = taskPage.page();
+        lastPage = taskPage.lastPage();
 
         getViewState().hideProgress();
         getViewState().showTasks();
-        getViewState().addTasks(tasksPage.tasks());
+        getViewState().addTasks(taskPage.tasks());
     }
 
     private void onAllTasksError(@NonNull Throwable throwable) {

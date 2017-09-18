@@ -10,15 +10,15 @@
 
     <ImageView
         android:id="@+id/imageview_task_preview"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:elevation="6dp"
         tools:ignore="ContentDescription,RtlHardcoded" />
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -81,7 +81,7 @@
             android:id="@+id/textview_task_section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:paddingBottom="16dp"
             android:drawableLeft="@drawable/ic_task_section"
             android:drawablePadding="8dp"
             tools:ignore="RtlHardcoded" />
@@ -94,6 +94,7 @@
         android:layout_marginRight="16dp"
         android:layout_gravity="center"
         android:orientation="vertical"
+        android:visibility="gone"
         tools:ignore="RtlHardcoded">
 
         <TextView

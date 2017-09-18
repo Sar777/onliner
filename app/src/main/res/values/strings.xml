@@ -2,10 +2,16 @@
     <!-- Common -->
     <string name="app_name">onliner.news</string>
     <string name="common_before">Before</string>
+    <string name="msg_common_task_status_active">Active</string>
+    <string name="msg_common_task_status_accepted">Accepted</string>
+    <string name="msg_common_task_status_completed">Completed</string>
+    <string name="msg_common_task_status_not_completed">Not completed</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- Main Screen -->
     <string name="action_nav_menu_all_tasks">All Tasks</string>
     <!-- Task Item -->
+    <string name="msg_task_contractual">Contractual</string>
+
 </resources>

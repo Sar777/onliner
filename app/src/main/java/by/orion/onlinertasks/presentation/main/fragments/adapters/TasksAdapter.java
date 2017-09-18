@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 
 import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.common.adapters.AbstractRecyclerAdapter;
-import by.orion.onlinertasks.data.models.task.Task;
 import by.orion.onlinertasks.presentation.main.fragments.adapters.holders.TaskViewHolder;
+import by.orion.onlinertasks.presentation.main.fragments.models.TaskItem;
 
-public class TasksAdapter extends AbstractRecyclerAdapter<Task, TaskViewHolder> {
+public class TasksAdapter extends AbstractRecyclerAdapter<TaskItem, TaskViewHolder> {
 
     @Override
     public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

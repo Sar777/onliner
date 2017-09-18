@@ -1,6 +1,7 @@
 package by.orion.onlinertasks.presentation.main.fragments.models;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
 
@@ -13,7 +14,7 @@ public abstract class AuthorItem {
     @NonNull
     public abstract String name();
 
-    @NonNull
+    @Nullable
     public abstract String photo();
 
     public static Builder builder() {

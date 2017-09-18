@@ -7,8 +7,8 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
 import java.util.List;
 
-import by.orion.onlinertasks.data.models.task.Task;
 import by.orion.onlinertasks.presentation.BaseMvpView;
+import by.orion.onlinertasks.presentation.main.fragments.models.TaskItem;
 
 @StateStrategyType(AddToEndSingleStrategy.class)
 public interface TasksView extends BaseMvpView {
@@ -28,5 +28,5 @@ public interface TasksView extends BaseMvpView {
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_TASK)
     void hideTasks();
 
-    void addTasks(@NonNull List<Task> tasks);
+    void addTasks(@NonNull List<TaskItem> tasks);
 }

@@ -4,10 +4,10 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.models.task.TasksRequestParams;
+import by.orion.onlinertasks.data.models.requests.TasksRequestParams;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
-import by.orion.onlinertasks.presentation.main.fragments.mappers.ListTaskToListTaskItemMapper;
-import by.orion.onlinertasks.presentation.main.fragments.models.TaskPage;
+import by.orion.onlinertasks.presentation.main.fragments.tasks.mappers.ListTaskToListTaskItemMapper;
+import by.orion.onlinertasks.presentation.main.fragments.tasks.models.TaskPage;
 import io.reactivex.Single;
 
 public class TasksInteractor {

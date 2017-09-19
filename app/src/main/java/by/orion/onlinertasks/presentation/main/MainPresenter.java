@@ -21,6 +21,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
             case ALL_TASKS:
                 getViewState().showAllTasks();
                 break;
+            case ALL_PROFILES:
+                getViewState().showAllProfiles();
+                break;
             default:
                 break;
         }

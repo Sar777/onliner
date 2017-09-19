@@ -25,7 +25,8 @@ import by.orion.onlinertasks.di.components.presentation.DaggerMainPresenterCompo
 import by.orion.onlinertasks.di.components.presentation.MainPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.MainPresenterModule;
 import by.orion.onlinertasks.presentation.common.models.MenuOption;
-import by.orion.onlinertasks.presentation.main.fragments.TasksFragment;
+import by.orion.onlinertasks.presentation.main.fragments.profiles.ProfilesFragment;
+import by.orion.onlinertasks.presentation.main.fragments.tasks.TasksFragment;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView, NavigationView.OnNavigationItemSelectedListener {
 
@@ -73,6 +74,16 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
     }
 
     @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
     public void showError() {
 
     }
@@ -85,6 +96,11 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
     @Override
     public void showAllTasks() {
         FragmentUtils.replaceFragment(TasksFragment.newInstance(), getSupportFragmentManager(), R.id.layout_content_main, null);
+    }
+
+    @Override
+    public void showAllProfiles() {
+        FragmentUtils.replaceFragment(ProfilesFragment.newInstance(), getSupportFragmentManager(), R.id.layout_content_main, null);
     }
 
     private void initToolbar() {
@@ -104,6 +120,9 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
         switch (item.getItemId()) {
             case R.id.nav_all_tasks:
                 option = MenuOption.ALL_TASKS;
+                break;
+            case R.id.nav_all_profiles:
+                option = MenuOption.ALL_PROFILES;
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown menu: " + item.getTitle());

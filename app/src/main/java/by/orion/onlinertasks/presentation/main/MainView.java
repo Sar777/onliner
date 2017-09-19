@@ -9,4 +9,6 @@ import by.orion.onlinertasks.presentation.BaseMvpView;
 public interface MainView extends BaseMvpView {
 
     void showAllTasks();
+
+    void showAllProfiles();
 }

@@ -25,6 +25,16 @@ public class SplashActivity extends MvpAppCompatActivity implements SplashView {
     }
 
     @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
     public void showError() {
 
     }

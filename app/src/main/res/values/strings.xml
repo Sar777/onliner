@@ -11,7 +11,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- Main Screen -->
     <string name="action_nav_menu_all_tasks">All Tasks</string>
+    <string name="action_nav_menu_all_profiles">All Profiles</string>
     <!-- Task Item -->
     <string name="msg_task_contractual">Contractual</string>
-
+    <!-- Profile Item -->
+    <string name="msg_profile_section">Section(s)</string>
+    <string name="msg_profile_task_completed">Completed %1$s task(s)</string>
 </resources>

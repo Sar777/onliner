@@ -4,6 +4,7 @@ import android.content.Context;
 
 import javax.inject.Singleton;
 
+import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
 import by.orion.onlinertasks.di.modules.ApplicationModule;
 import by.orion.onlinertasks.di.modules.DataSourceModule;
@@ -29,4 +30,6 @@ public interface ApplicationComponent {
     Context provideContext();
 
     TasksRepository provideTasksRepository();
+
+    ProfilesRepository provideProfilesRepository();
 }

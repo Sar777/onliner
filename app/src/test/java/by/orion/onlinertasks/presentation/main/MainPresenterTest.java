@@ -27,11 +27,20 @@ public class MainPresenterTest {
     }
 
     @Test
-    public void main_shouldOpenAllTasksOnClickAllTask() {
+    public void main_shouldOpenAllTasksOnClickAllTasks() {
         // act
         mainPresenter.onClickMenu(MenuOption.ALL_TASKS);
 
         // assert
         verify(mainView$$StateMock).showAllTasks();
+    }
+
+    @Test
+    public void main_shouldOpenAllProfilesOnClickAllProfiles() {
+        // act
+        mainPresenter.onClickMenu(MenuOption.ALL_PROFILES);
+
+        // assert
+        verify(mainView$$StateMock).showAllProfiles();
     }
 }

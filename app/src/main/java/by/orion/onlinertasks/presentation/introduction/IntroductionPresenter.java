@@ -1,8 +1,5 @@
 package by.orion.onlinertasks.presentation.introduction;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
@@ -13,17 +10,14 @@ import by.orion.onlinertasks.R;
 @InjectViewState
 public class IntroductionPresenter extends MvpPresenter<IntroductionView> {
 
-    @NonNull
-    private final Context context;
-
     private final int maxPages;
 
     private int currentPage;
 
     @Inject
-    public IntroductionPresenter(@NonNull Context context, int maxPages) {
-        this.context = context;
+    public IntroductionPresenter(int maxPages) {
         this.maxPages = maxPages;
+        this.currentPage = 0;
     }
 
     @Override
@@ -33,7 +27,7 @@ public class IntroductionPresenter extends MvpPresenter<IntroductionView> {
         getViewState().setCurrentDot(0);
     }
 
-    public void onNextSlideClick() {
+    public void onNextPageClick() {
         if (++currentPage < maxPages) {
             getViewState().selectPage(currentPage);
         } else {

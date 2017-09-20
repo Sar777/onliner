@@ -170,7 +170,7 @@ public class IntroductionActivity extends MvpAppCompatActivity implements Introd
         });
 
         buttonSkip.setOnClickListener(v -> presenter.onSkipClick());
-        buttonNext.setOnClickListener(v -> presenter.onNextSlideClick());
+        buttonNext.setOnClickListener(v -> presenter.onNextPageClick());
     }
 
     @ProvidePresenter

@@ -20,11 +20,11 @@ public class SplashRepositoryImpl implements SplashRepository {
 
     @Override
     public Single<Boolean> isFirstTimeLaunch() {
-        return localDataSource.isFirstLaunch();
+        return localDataSource.isFirstTimeLaunch();
     }
 
     @Override
     public Single<Boolean> setFirstTimeLaunch(@NonNull Boolean first) {
-        return localDataSource.setFirstLaunch(first);
+        return localDataSource.setFirstTimeLaunch(first);
     }
 }

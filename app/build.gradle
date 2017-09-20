@@ -104,7 +104,6 @@ dependencies {
     testCompile libraries.hamcrest
     testCompile libraries.mockito
     testCompile libraries.robolectric
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 configurations.all {

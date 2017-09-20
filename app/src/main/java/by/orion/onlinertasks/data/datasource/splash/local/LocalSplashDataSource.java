@@ -30,7 +30,7 @@ public class LocalSplashDataSource implements SplashDataSource {
     }
 
     @Override
-    public Single<Boolean> setFirstLaunch(@NonNull Boolean first) {
+    public Single<Boolean> setFirstTimeLaunch(@NonNull Boolean first) {
         return Single.just(sharedPreferences.edit())
                 .map(editor -> editor.putBoolean(KEY_IS_FIRST_LAUNCH, first))
                 .map(SharedPreferences.Editor::commit)
@@ -38,7 +38,7 @@ public class LocalSplashDataSource implements SplashDataSource {
     }
 
     @Override
-    public Single<Boolean> isFirstLaunch() {
+    public Single<Boolean> isFirstTimeLaunch() {
         return Single.just(sharedPreferences.getBoolean(KEY_IS_FIRST_LAUNCH, true));
     }
 }

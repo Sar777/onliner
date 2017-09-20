@@ -7,7 +7,7 @@ import io.reactivex.Single;
 
 public interface SplashDataSource extends DataSource<String, Object> {
 
-    Single<Boolean> setFirstLaunch(@NonNull Boolean first);
+    Single<Boolean> setFirstTimeLaunch(@NonNull Boolean first);
 
-    Single<Boolean> isFirstLaunch();
+    Single<Boolean> isFirstTimeLaunch();
 }

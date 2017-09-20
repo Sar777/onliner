@@ -5,4 +5,37 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <!-- Introduction Screen -->
+    <dimen name="height_introduction_layout_actions_45dp">45dp</dimen>
+    <dimen name="height_introduction_divider_1dp">1dp</dimen>
+    <!-- Introduction Slide 1 -->
+    <dimen name="min_height_introduction_slide_1_layout_72dp">72dp</dimen>
+    <dimen name="size_introduction_slide_1_icon_55dp">55dp</dimen>
+    <dimen name="margin_top_left_introduction_slide_1_icon_16dp">16dp</dimen>
+    <dimen name="margin_left_right_introduction_slide_1_layout_text_16dp">16dp</dimen>
+    <dimen name="padding_top_bottom_introduction_slide_1_layout_text_16dp">16dp</dimen>
+    <dimen name="textsize_introduction_slide_1_text_2_12sp">12sp</dimen>
+    <dimen name="textsize_introduction_slide_1_text_1_14sp">14sp</dimen>
+    <dimen name="height_introduction_slide_1_divider_1dp">1dp</dimen>
+    <dimen name="textsize_introduction_slide_1_text_intro_body_15sp">15sp</dimen>
+    <dimen name="textsize_introduction_slide_1_text_intro_title_30sp">30sp</dimen>
+    <dimen name="margin_top_right_left_introduction_slide_1_layout_intro_16dp">16dp</dimen>
+    <!-- Introduction Slide 2 -->
+    <dimen name="margin_top_bottom_introduction_slide_2_layout_32dp">32dp</dimen>
+    <dimen name="margin_left_right_introduction_slide_2_layout_16dp">16dp</dimen>
+    <dimen name="textsize_introduction_slide_2_text_title_20sp">20sp</dimen>
+    <dimen name="textsize_introduction_slide_2_text_body_14sp">14sp</dimen>
+    <dimen name="margin_top_introduction_slide_2_text_body_8dp">8dp</dimen>
+    <!-- Introduction Slide 3 -->
+    <dimen name="margin_top_introduction_slide_3_text_body_8dp">8dp</dimen>
+    <dimen name="textsize_introduction_slide_3_text_body_14sp">14sp</dimen>
+    <dimen name="textsize_introduction_slide_3_text_title_20sp">20sp</dimen>
+    <dimen name="margin_top_bottom_introduction_slide_3_layout_32dp">32dp</dimen>
+    <dimen name="margin_left_right_introduction_slide_3_layout_16dp">16dp</dimen>
+    <!-- Introduction Slide 4 -->
+    <dimen name="margin_left_right_introduction_slide_4_layout_16dp">16dp</dimen>
+    <dimen name="margin_top_bottom_introduction_slide_4_layout_32dp">32dp</dimen>
+    <dimen name="textsize_introduction_slide_4_text_title_20sp">20sp</dimen>
+    <dimen name="textsize_introduction_slide_4_text_body_14sp">14sp</dimen>
+    <dimen name="margin_top_introduction_slide_4_text_body_8dp">8dp</dimen>
 </resources>

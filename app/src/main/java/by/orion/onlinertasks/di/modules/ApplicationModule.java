@@ -1,6 +1,8 @@
 package by.orion.onlinertasks.di.modules;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
@@ -18,11 +20,17 @@ public class ApplicationModule {
         this.context = context.getApplicationContext();
     }
 
-    @Provides
     @Singleton
+    @Provides
     @NonNull
     Context provideApplicationContext() {
         return context;
     }
 
+    @Singleton
+    @Provides
+    @NonNull
+    SharedPreferences provideSharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(context);
+    }
 }

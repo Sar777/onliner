@@ -9,9 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import by.orion.onlinertasks.domain.interactors.SplashInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
-import io.reactivex.Completable;
-import io.reactivex.CompletableEmitter;
 import io.reactivex.schedulers.Schedulers;
 
 @InjectViewState
@@ -20,11 +19,15 @@ public class SplashPresenter extends MvpPresenter<SplashView> {
     private final int delay;
 
     @NonNull
+    private final SplashInteractor splashInteractor;
+
+    @NonNull
     private final RxSchedulersProvider rxSchedulersProvider;
 
     @Inject
-    public SplashPresenter(int delay, @NonNull RxSchedulersProvider rxSchedulersProvider) {
+    public SplashPresenter(int delay, @NonNull SplashInteractor splashInteractor, @NonNull RxSchedulersProvider rxSchedulersProvider) {
         this.delay = delay;
+        this.splashInteractor = splashInteractor;
         this.rxSchedulersProvider = rxSchedulersProvider;
     }
 
@@ -32,9 +35,21 @@ public class SplashPresenter extends MvpPresenter<SplashView> {
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
 
-        Completable.create(CompletableEmitter::onComplete)
+        splashInteractor.isFirstTimeLaunchAndChangeIfNeed()
                 .delay(delay, TimeUnit.SECONDS, Schedulers.trampoline())
-                .compose(rxSchedulersProvider.getIoToMainTransformerCompletableCompletable())
-                .subscribe(() -> getViewState().goToMainScreen());
+                .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
+                .subscribe(this::onFirstTimeLaunchSuccess, this::onFirstTimeLaunchError);
+    }
+
+    private void onFirstTimeLaunchSuccess(@NonNull Boolean isFirst) {
+        if (isFirst) {
+            getViewState().goToIntroductionScreen();
+        } else {
+            getViewState().goToMainScreen();
+        }
+    }
+
+    private void onFirstTimeLaunchError(@NonNull Throwable error) {
+        getViewState().showError();
     }
 }

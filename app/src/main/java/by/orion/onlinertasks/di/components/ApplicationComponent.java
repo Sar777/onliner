@@ -1,10 +1,12 @@
 package by.orion.onlinertasks.di.components;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
+import by.orion.onlinertasks.data.repository.splash.SplashRepository;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
 import by.orion.onlinertasks.di.modules.ApplicationModule;
 import by.orion.onlinertasks.di.modules.DataSourceModule;
@@ -28,6 +30,10 @@ import dagger.Component;
 public interface ApplicationComponent {
 
     Context provideContext();
+
+    SharedPreferences provideSharedPreferences();
+
+    SplashRepository provideSplashRepository();
 
     TasksRepository provideTasksRepository();
 

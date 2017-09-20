@@ -2,6 +2,18 @@
     <!-- Splash Screen -->
     <item name="bg_splash" type="drawable">@drawable/background_splash</item>
     <item name="ic_splash_logo" type="drawable">@drawable/onliner_logo</item>
+    <!-- Introduction Screen -->
+    <item name="bg_introduction_header" type="drawable">@drawable/bg_onliner_tasks_header</item>
+    <!-- Introduction Slide 1 -->
+    <item name="ic_introduction_slide_1_time" type="drawable">@drawable/ic_time_color_64dp</item>
+    <item name="ic_introduction_slide_1_shield" type="drawable">@drawable/ic_shield_color_64dp</item>
+    <item name="ic_introduction_slide_1_up" type="drawable">@drawable/ic_up_64dp</item>
+    <!-- Introduction Slide 2 -->
+    <item name="ic_introduction_slide_2" type="drawable">@drawable/bg_manuals_01</item>
+    <!-- Introduction Slide 3 -->
+    <item name="ic_introduction_slide_3" type="drawable">@drawable/bg_manuals_02</item>
+    <!-- Introduction Slide 3 -->
+    <item name="ic_introduction_slide_4" type="drawable">@drawable/bg_manuals_03</item>
     <!-- Main Screen -->
     <item name="ic_nav_menu_all_tasks" type="drawable">@drawable/onliner_logo</item>
     <item name="ic_nav_menu_all_profiles" type="drawable">@drawable/onliner_logo</item>

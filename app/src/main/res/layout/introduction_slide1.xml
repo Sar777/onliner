@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height_introduction_slide_1_layout_72dp">
+
+        <ImageView
+            android:layout_width="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_height="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_marginTop="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:layout_marginLeft="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:src="@drawable/ic_introduction_slide_1_time"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:layout_marginRight="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:paddingTop="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_1_14sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/msg_introduction_slide_1_fast_title"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_2_12sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/msg_introduction_slide_1_fast_description"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_introduction_slide_1_divider_1dp"
+        android:background="?android:dividerHorizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height_introduction_slide_1_layout_72dp">
+
+        <ImageView
+            android:layout_width="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_height="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_marginLeft="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:layout_marginTop="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:src="@drawable/ic_introduction_slide_1_shield"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:layout_marginRight="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_1_14sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/msg_introduction_slide_1_security_title"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_2_12sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/msg_introduction_slide_1_security_description"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_introduction_slide_1_divider_1dp"
+        android:background="?android:dividerHorizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height_introduction_slide_1_layout_72dp">
+
+        <ImageView
+            android:layout_width="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_height="@dimen/size_introduction_slide_1_icon_55dp"
+            android:layout_marginLeft="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:layout_marginTop="@dimen/margin_top_left_introduction_slide_1_icon_16dp"
+            android:src="@drawable/ic_introduction_slide_1_up"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:layout_marginRight="@dimen/margin_left_right_introduction_slide_1_layout_text_16dp"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_introduction_slide_1_layout_text_16dp"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_1_14sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/msg_introduction_slide_1_profit_title"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_introduction_slide_1_text_2_12sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="@string/msg_introduction_slide_1_profit_description"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_introduction_slide_1_divider_1dp"
+        android:background="?android:dividerHorizontal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_top_right_left_introduction_slide_1_layout_intro_16dp"
+        android:layout_marginRight="@dimen/margin_top_right_left_introduction_slide_1_layout_intro_16dp"
+        android:layout_marginTop="@dimen/margin_top_right_left_introduction_slide_1_layout_intro_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_introduction_slide_1_text_intro_title_30sp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="@string/msg_introduction_slide_1_how_it_work"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="@dimen/textsize_introduction_slide_1_text_intro_body_15sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:gravity="center"
+            android:text="@string/msg_introduction_slide_1_how_it_work_description"/>
+    </LinearLayout>
+</LinearLayout>

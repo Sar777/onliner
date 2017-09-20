@@ -8,6 +8,7 @@ import org.mockito.MockitoAnnotations;
 
 import by.orion.onlinertasks.AppTestRunner;
 import by.orion.onlinertasks.TestRxSchedulerProvider;
+import by.orion.onlinertasks.domain.interactors.SplashInteractor;
 
 import static org.mockito.Mockito.verify;
 
@@ -17,6 +18,9 @@ public class SplashPresenterTest {
     private static final int DELAY = 3;
 
     @Mock
+    SplashInteractor splashInteractorMock;
+
+    @Mock
     SplashView$$State splashViewStateMock;
 
     private SplashPresenter splashPresenter;
@@ -24,7 +28,7 @@ public class SplashPresenterTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        splashPresenter = new SplashPresenter(DELAY, new TestRxSchedulerProvider());
+        splashPresenter = new SplashPresenter(DELAY, splashInteractorMock, new TestRxSchedulerProvider());
         splashPresenter.setViewState(splashViewStateMock);
     }
 

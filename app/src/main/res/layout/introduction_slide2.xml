@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_bottom_introduction_slide_2_layout_32dp"
+        android:layout_marginBottom="@dimen/margin_top_bottom_introduction_slide_2_layout_32dp"
+        android:layout_marginLeft="@dimen/margin_left_right_introduction_slide_2_layout_16dp"
+        android:layout_marginRight="@dimen/margin_left_right_introduction_slide_2_layout_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/msg_introduction_slide_2_step_title"
+            android:textSize="@dimen/textsize_introduction_slide_2_text_title_20sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_introduction_slide_2_text_body_8dp"
+            android:gravity="center"
+            android:text="@string/msg_introduction_slide_2_step_description"
+            android:textSize="@dimen/textsize_introduction_slide_2_text_body_14sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_introduction_slide_2"
+        tools:ignore="ContentDescription" />
+</LinearLayout>

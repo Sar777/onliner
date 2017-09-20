@@ -9,6 +9,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Introduction Screen -->
+    <string name="title_introduction_next">Next</string>
+    <string name="title_introduction_start">Start</string>
+    <string name="title_introduction_skip">Skip</string>
     <!-- Main Screen -->
     <string name="action_nav_menu_all_tasks">All Tasks</string>
     <string name="action_nav_menu_all_profiles">All Profiles</string>
@@ -17,4 +21,22 @@
     <!-- Profile Item -->
     <string name="msg_profile_section">Section(s)</string>
     <string name="msg_profile_task_completed">Completed %1$s task(s)</string>
+    <!-- Introduction Slide 1 -->
+    <string name="msg_introduction_slide_1_fast_title">Быстро</string>
+    <string name="msg_introduction_slide_1_fast_description">Разместите заказ — и уже совсем скоро вы начнете получать отклики от исполнителей, готовых взяться за него</string>
+    <string name="msg_introduction_slide_1_security_title">Безопасно</string>
+    <string name="msg_introduction_slide_1_security_description">Мы проверяем всю информацию и документы исполнителей. Повторные регистрации исключены</string>
+    <string name="msg_introduction_slide_1_profit_title">Выгодно</string>
+    <string name="msg_introduction_slide_1_profit_description">Сравнив цены и условия различных исполнителей, вы можете выбрать того, кто лучше всего подходит вам</string>
+    <string name="msg_introduction_slide_1_how_it_work">Как это работает?</string>
+    <string name="msg_introduction_slide_1_how_it_work_description">Просто, выгодно, надежно. Всего 3 шага — и вы найдете идеального исполнителя для своего заказа.</string>
+    <!-- Introduction Slide 2 -->
+    <string name="msg_introduction_slide_2_step_title">1. Разместите заказ</string>
+    <string name="msg_introduction_slide_2_step_description">Подробно опишите свой заказ. Приложите документы, фотографии и укажите условия — стоимость и сроки.</string>
+    <!-- Introduction Slide 3 -->
+    <string name="msg_introduction_slide_3_step_title">2. Изучите отклики</string>
+    <string name="msg_introduction_slide_3_step_description">Дождитесь откликов от исполнителей и сравните их. Вся информация под рукой: цена, комментарий и рейтинг исполнителя.</string>
+    <!-- Introduction Slide 4 -->
+    <string name="msg_introduction_slide_4_step_title">3. Выберите исполнителя</string>
+    <string name="msg_introduction_slide_4_step_description">Выберите подходящего вам исполнителя и свяжитесь с ним для согласования заказа. После выполнения заказа — оставьте отзыв.</string>
 </resources>

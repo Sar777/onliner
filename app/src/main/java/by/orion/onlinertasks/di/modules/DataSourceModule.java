@@ -1,5 +1,6 @@
 package by.orion.onlinertasks.di.modules;
 
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
@@ -10,6 +11,8 @@ import by.orion.onlinertasks.common.network.services.BaseService;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.local.LocalProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.remote.RemoteProfilesDataSource;
+import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
+import by.orion.onlinertasks.data.datasource.splash.local.LocalSplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.local.LocalTasksDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.remote.RemoteTasksDataSource;
@@ -20,6 +23,14 @@ import dagger.Provides;
 
 @Module
 public class DataSourceModule {
+
+    @Singleton
+    @LocalDataSource
+    @Provides
+    @NonNull
+    SplashDataSource provideLocalSplashDataSource(@NonNull SharedPreferences sharedPreferences) {
+        return new LocalSplashDataSource(sharedPreferences);
+    }
 
     @Singleton
     @LocalDataSource

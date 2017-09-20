@@ -5,9 +5,12 @@ import android.support.annotation.NonNull;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
+import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepositoryImpl;
+import by.orion.onlinertasks.data.repository.splash.SplashRepository;
+import by.orion.onlinertasks.data.repository.splash.SplashRepositoryImpl;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepositoryImpl;
 import by.orion.onlinertasks.di.qualifiers.LocalDataSource;
@@ -17,6 +20,13 @@ import dagger.Provides;
 
 @Module
 public class RepositoryModule {
+
+    @Singleton
+    @Provides
+    @NonNull
+    SplashRepository provideSplashRepository(@NonNull @LocalDataSource SplashDataSource localDataSource) {
+        return new SplashRepositoryImpl(localDataSource);
+    }
 
     @Singleton
     @Provides

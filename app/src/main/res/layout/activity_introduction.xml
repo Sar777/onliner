@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="by.orion.onlinertasks.presentation.introduction.IntroductionActivity">
+
+    <ImageView
+        android:id="@+id/imageview_introduction_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_introduction_header"
+        tools:ignore="ContentDescription" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_introduction_dots"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageview_introduction_header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_introduction_layout_actions_45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_introduction_divider_1dp"
+            android:alpha=".5"
+            android:background="?android:dividerHorizontal" />
+
+        <Button
+            android:id="@+id/button_introduction_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/title_introduction_next"
+            android:textColor="@color/introduction_buttons_text_color"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:id="@+id/layout_dots_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <Button
+            android:id="@+id/button_introduction_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/title_introduction_skip"
+            android:textColor="@color/introduction_buttons_text_color"
+            tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
+</RelativeLayout>

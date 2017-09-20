@@ -11,6 +11,7 @@ import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.di.components.presentation.DaggerSplashPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.SplashPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.SplashPresenterModule;
+import by.orion.onlinertasks.presentation.introduction.IntroductionActivity;
 import by.orion.onlinertasks.presentation.main.MainActivity;
 
 public class SplashActivity extends MvpAppCompatActivity implements SplashView {
@@ -47,6 +48,11 @@ public class SplashActivity extends MvpAppCompatActivity implements SplashView {
     @Override
     public void goToMainScreen() {
         startActivity(MainActivity.newIntent(this));
+    }
+
+    @Override
+    public void goToIntroductionScreen() {
+        startActivity(IntroductionActivity.newIntent(this));
     }
 
     @ProvidePresenter

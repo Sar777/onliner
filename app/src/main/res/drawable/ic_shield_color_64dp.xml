@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="56dp"
+    android:height="64dp"
+    android:viewportWidth="56"
+    android:viewportHeight="64">
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:strokeColor="#3E4753"
+        android:strokeWidth="6"
+        android:pathData="M0,6 L28,0 L56,6 C56,6 56,14 56,34 C56,54 28,64 28,64 C28,64 -7.11565917e-09,54
+0,34 C7.11566191e-09,14 0,6 0,6 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:strokeColor="#3E4753"
+        android:strokeWidth="6"
+        android:pathData="M0,6 L28,0 L56,6 C56,6 56,14 56,34 C56,54 28,64 28,64 C28,64 -7.11565917e-09,54
+0,34 C7.11566191e-09,14 0,6 0,6 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillColor="#5DA600"
+        android:fillType="evenOdd"
+        android:strokeWidth="1"
+        android:pathData="M28,8 L48,12 L48,36 C48,47 28,55 28,55 L28,8 Z"
+        tools:targetApi="n" />
+    <path
+        android:fillColor="#F1F7E9"
+        android:fillType="evenOdd"
+        android:strokeWidth="1"
+        android:pathData="M8,8 L28,12 L28,36 C28,47 8,55 8,55 L8,8 Z"
+        tools:targetApi="n" />
+</vector>

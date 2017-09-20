@@ -9,4 +9,7 @@ public interface SplashView extends BaseMvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void goToMainScreen();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void goToIntroductionScreen();
 }

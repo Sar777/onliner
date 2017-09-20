@@ -53,6 +53,10 @@ public enum TaskStatus {
 
     @NonNull
     public static TaskStatus get(@NonNull final String name) {
-        return lookup.getOrDefault(name, ACTIVE);
+        if (!lookup.containsKey(name)) {
+            return ACTIVE;
+        }
+
+        return lookup.get(name);
     }
 }

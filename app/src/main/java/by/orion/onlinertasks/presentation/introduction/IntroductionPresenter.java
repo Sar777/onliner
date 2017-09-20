@@ -46,6 +46,8 @@ public class IntroductionPresenter extends MvpPresenter<IntroductionView> {
     }
 
     public void onPageSelected(int page) {
+        currentPage = page;
+
         getViewState().setCurrentDot(page);
 
         if (page == maxPages - 1) {

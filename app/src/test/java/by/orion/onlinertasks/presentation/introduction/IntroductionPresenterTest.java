@@ -2,13 +2,16 @@ package by.orion.onlinertasks.presentation.introduction;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import by.orion.onlinertasks.AppTestRunner;
 import by.orion.onlinertasks.R;
 
 import static org.mockito.Mockito.verify;
 
+@RunWith(AppTestRunner.class)
 public class IntroductionPresenterTest {
 
     private static final int MAX_PAGES = 4;

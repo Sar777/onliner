@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import javax.inject.Singleton;
 
+import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.splash.SplashRepository;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
@@ -38,4 +39,6 @@ public interface ApplicationComponent {
     TasksRepository provideTasksRepository();
 
     ProfilesRepository provideProfilesRepository();
+
+    ProfileDetailsRepository provideProfileDetailsRepository();
 }

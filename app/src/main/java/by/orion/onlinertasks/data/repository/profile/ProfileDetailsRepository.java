@@ -1,13 +1,13 @@
-package by.orion.onlinertasks.data.datasource.profile;
+package by.orion.onlinertasks.data.repository.profile;
 
 import android.support.annotation.NonNull;
 
-import by.orion.onlinertasks.data.datasource.DataSource;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
+import by.orion.onlinertasks.data.repository.Repository;
 import io.reactivex.Single;
 
-public interface ProfileDataSource extends DataSource<Integer, Profile> {
+public interface ProfileDetailsRepository extends Repository {
 
     Single<Profile> getProfile(@NonNull ProfileRequestParams params);
 }

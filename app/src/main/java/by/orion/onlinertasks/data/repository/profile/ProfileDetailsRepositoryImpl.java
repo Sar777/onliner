@@ -4,24 +4,24 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.datasource.profile.ProfileDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
 import by.orion.onlinertasks.di.qualifiers.LocalDataSource;
 import by.orion.onlinertasks.di.qualifiers.RemoteDataSource;
 import io.reactivex.Single;
 
-public class ProfileRepositoryImpl implements ProfileRepository {
+public class ProfileDetailsRepositoryImpl implements ProfileDetailsRepository {
 
     @NonNull
-    private final ProfileDataSource localDataSource;
+    private final ProfileDetailsDataSource localDataSource;
 
     @NonNull
-    private final ProfileDataSource remoteDataSource;
+    private final ProfileDetailsDataSource remoteDataSource;
 
     @Inject
-    public ProfileRepositoryImpl(@NonNull @LocalDataSource ProfileDataSource localDataSource,
-                                 @NonNull @RemoteDataSource ProfileDataSource remoteDataSource) {
+    public ProfileDetailsRepositoryImpl(@NonNull @LocalDataSource ProfileDetailsDataSource localDataSource,
+                                        @NonNull @RemoteDataSource ProfileDetailsDataSource remoteDataSource) {
         this.localDataSource = localDataSource;
         this.remoteDataSource = remoteDataSource;
     }

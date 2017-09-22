@@ -1,20 +1,20 @@
-package by.orion.onlinertasks.data.datasource.profile.remote;
+package by.orion.onlinertasks.data.datasource.profile.details.remote;
 
 import android.support.annotation.NonNull;
 
 import by.orion.onlinertasks.common.network.services.BaseService;
-import by.orion.onlinertasks.data.datasource.profile.ProfileDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
-public class RemoteProfileDataSource implements ProfileDataSource {
+public class RemoteProfileDetailsDataSource implements ProfileDetailsDataSource {
 
     @NonNull
     private final BaseService service;
 
-    public RemoteProfileDataSource(@NonNull BaseService service) {
+    public RemoteProfileDetailsDataSource(@NonNull BaseService service) {
         this.service = service;
     }
 

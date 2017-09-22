@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".presentation.main.MainActivity" />
         <activity android:name=".presentation.introduction.IntroductionActivity" />
+        <activity android:name=".presentation.profile.details.ProfileDetailsActivity" />
     </application>
 
 </manifest>

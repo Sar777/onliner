@@ -8,9 +8,9 @@ import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.common.network.services.BaseService;
-import by.orion.onlinertasks.data.datasource.profile.ProfileDataSource;
-import by.orion.onlinertasks.data.datasource.profile.local.LocalProfileDataSource;
-import by.orion.onlinertasks.data.datasource.profile.remote.RemoteProfileDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.local.LocalProfileDetailsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.remote.RemoteProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.local.LocalProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.remote.RemoteProfilesDataSource;
@@ -71,15 +71,15 @@ public class DataSourceModule {
     @LocalDataSource
     @Provides
     @NonNull
-    ProfileDataSource provideLocalProfileDataSource(@NonNull StorIOSQLite storIOSQLite) {
-        return new LocalProfileDataSource(storIOSQLite);
+    ProfileDetailsDataSource provideLocalProfileDetailsDataSource(@NonNull StorIOSQLite storIOSQLite) {
+        return new LocalProfileDetailsDataSource(storIOSQLite);
     }
 
     @Singleton
     @RemoteDataSource
     @Provides
     @NonNull
-    ProfileDataSource provideRemoteProfileDataSource(@NonNull BaseService service) {
-        return new RemoteProfileDataSource(service);
+    ProfileDetailsDataSource provideRemoteProfileDetailsDataSource(@NonNull BaseService service) {
+        return new RemoteProfileDetailsDataSource(service);
     }
 }

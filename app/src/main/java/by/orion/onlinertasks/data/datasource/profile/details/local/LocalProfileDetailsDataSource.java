@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.data.datasource.profile.local;
+package by.orion.onlinertasks.data.datasource.profile.details.local;
 
 import android.support.annotation.NonNull;
 
@@ -6,19 +6,19 @@ import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.datasource.profile.ProfileDataSource;
+import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
-public class LocalProfileDataSource implements ProfileDataSource {
+public class LocalProfileDetailsDataSource implements ProfileDetailsDataSource {
 
     @NonNull
     private final StorIOSQLite storIOSQLite;
 
     @Inject
-    public LocalProfileDataSource(@NonNull StorIOSQLite storIOSQLite) {
+    public LocalProfileDetailsDataSource(@NonNull StorIOSQLite storIOSQLite) {
         this.storIOSQLite = storIOSQLite;
     }
 

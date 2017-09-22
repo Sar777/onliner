@@ -4,9 +4,12 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
 
+import by.orion.onlinertasks.data.datasource.profile.ProfileDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
+import by.orion.onlinertasks.data.repository.profile.ProfileRepository;
+import by.orion.onlinertasks.data.repository.profile.ProfileRepositoryImpl;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepositoryImpl;
 import by.orion.onlinertasks.data.repository.splash.SplashRepository;
@@ -42,5 +45,13 @@ public class RepositoryModule {
     ProfilesRepository provideProfilesRepository(@NonNull @LocalDataSource ProfilesDataSource localDataSource,
                                                  @NonNull @RemoteDataSource ProfilesDataSource remoteDataSource) {
         return new ProfilesRepositoryImpl(localDataSource, remoteDataSource);
+    }
+
+    @Singleton
+    @Provides
+    @NonNull
+    ProfileRepository provideProfileRepository(@NonNull @LocalDataSource ProfileDataSource localDataSource,
+                                               @NonNull @RemoteDataSource ProfileDataSource remoteDataSource) {
+        return new ProfileRepositoryImpl(localDataSource, remoteDataSource);
     }
 }

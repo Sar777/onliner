@@ -58,9 +58,6 @@ public abstract class Task {
     @SerializedName("section")
     public abstract Section section();
 
-    @SerializedName("permissions")
-    public abstract Permissions permissions();
-
     public static TypeAdapter<Task> typeAdapter(Gson gson) {
         return new AutoValue_Task.GsonTypeAdapter(gson);
     }

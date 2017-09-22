@@ -5,7 +5,7 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 public abstract class ProfilesRequestParams {
 
-    public abstract int page();
+    public abstract Integer page();
 
     public static Builder builder() {
         return new AutoValue_ProfilesRequestParams.Builder()
@@ -14,7 +14,7 @@ public abstract class ProfilesRequestParams {
 
     @AutoValue.Builder
     public abstract static class Builder {
-        public abstract Builder page(int page);
+        public abstract Builder page(Integer page);
         public abstract ProfilesRequestParams build();
     }
 }

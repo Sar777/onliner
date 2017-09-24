@@ -8,9 +8,17 @@ import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.common.adapters.AbstractRecyclerAdapter;
 import by.orion.onlinertasks.common.adapters.holders.AbstractRecyclerViewHolder;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.adapters.holders.ProfileViewHolder;
+import by.orion.onlinertasks.presentation.main.fragments.profiles.adapters.listeners.OnClickProfileListener;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.models.ProfileItem;
 
 public class ProfilesAdapter extends AbstractRecyclerAdapter<ProfileItem, AbstractRecyclerViewHolder> {
+
+    @NonNull
+    private final OnClickProfileListener listener;
+
+    public ProfilesAdapter(@NonNull OnClickProfileListener listener) {
+        this.listener = listener;
+    }
 
     @Override
     public AbstractRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -20,7 +28,7 @@ public class ProfilesAdapter extends AbstractRecyclerAdapter<ProfileItem, Abstra
         }
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new ProfileViewHolder(inflater.inflate(R.layout.item_profile, parent, false));
+        return new ProfileViewHolder(listener, inflater.inflate(R.layout.item_profile, parent, false));
     }
 
     @Override

@@ -3,6 +3,7 @@ package by.orion.onlinertasks.presentation.main.fragments.profiles;
 import android.support.annotation.NonNull;
 
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
+import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
 import java.util.List;
@@ -29,4 +30,7 @@ public interface ProfilesView extends BaseMvpView {
 
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_LOAD_MORE_PROFILES)
     void disableLoadMoreProfiles();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void goToProfileDetails(@NonNull Integer id);
 }

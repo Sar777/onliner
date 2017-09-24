@@ -39,4 +39,8 @@
     <!-- Introduction Slide 4 -->
     <string name="msg_introduction_slide_4_step_title">3. Выберите исполнителя</string>
     <string name="msg_introduction_slide_4_step_description">Выберите подходящего вам исполнителя и свяжитесь с ним для согласования заказа. После выполнения заказа — оставьте отзыв.</string>
+    <!-- Profile Details -->
+    <string name="title_profile_details_page_information">Information</string>
+    <string name="title_profile_details_page_portfolio">Portfolio</string>
+    <string name="title_profile_details_page_reviews">Reviews</string>
 </resources>

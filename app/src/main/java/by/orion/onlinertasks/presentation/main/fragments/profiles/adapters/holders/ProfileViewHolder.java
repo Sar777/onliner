@@ -15,6 +15,7 @@ import com.bumptech.glide.request.RequestOptions;
 import butterknife.BindView;
 import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.common.adapters.holders.AbstractRecyclerViewHolder;
+import by.orion.onlinertasks.presentation.main.fragments.profiles.adapters.listeners.OnClickProfileListener;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.models.ProfileItem;
 
 public class ProfileViewHolder extends AbstractRecyclerViewHolder<ProfileItem> {
@@ -40,8 +41,12 @@ public class ProfileViewHolder extends AbstractRecyclerViewHolder<ProfileItem> {
     @BindView(R.id.ratingbar_profile_rating)
     RatingBar ratingBarRating;
 
-    public ProfileViewHolder(@NonNull View itemView) {
+    @NonNull
+    private final OnClickProfileListener listener;
+
+    public ProfileViewHolder(@NonNull OnClickProfileListener listener, @NonNull View itemView) {
         super(itemView);
+        this.listener = listener;
     }
 
     @Override
@@ -54,6 +59,9 @@ public class ProfileViewHolder extends AbstractRecyclerViewHolder<ProfileItem> {
                     .apply(new RequestOptions().transform(new CircleCrop()))
                     .into(imageViewPreview);
         }
+
+        itemView.setTag(profile.id());
+        itemView.setOnClickListener(v -> listener.onClick((Integer) v.getTag()));
 
         textViewTitle.setText(profile.displayName());
         textViewDescription.setText(profile.description());

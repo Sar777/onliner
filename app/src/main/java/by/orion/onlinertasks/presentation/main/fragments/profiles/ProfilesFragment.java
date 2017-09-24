@@ -26,6 +26,7 @@ import by.orion.onlinertasks.di.components.presentation.ProfilesPresenterCompone
 import by.orion.onlinertasks.di.modules.presentation.ProfilesPresenterModule;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.adapters.ProfilesAdapter;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.models.ProfileItem;
+import by.orion.onlinertasks.presentation.profile.details.ProfileDetailsActivity;
 
 public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesView {
 
@@ -101,6 +102,11 @@ public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesVi
         recyclerView.clearOnScrollListeners();
     }
 
+    @Override
+    public void goToProfileDetails(@NonNull Integer id) {
+        startActivity(ProfileDetailsActivity.newIntent(getContext(), id));
+    }
+
     @NonNull
     @ProvidePresenter
     ProfilesPresenter providePresenter() {
@@ -113,7 +119,7 @@ public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesVi
     }
 
     private void initView() {
-        adapter = new ProfilesAdapter();
+        adapter = new ProfilesAdapter(id -> presenter.onProfileClick(id));
         adapter.setHasStableIds(true);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

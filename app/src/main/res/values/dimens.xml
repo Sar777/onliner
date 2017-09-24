@@ -38,4 +38,6 @@
     <dimen name="textsize_introduction_slide_4_text_title_20sp">20sp</dimen>
     <dimen name="textsize_introduction_slide_4_text_body_14sp">14sp</dimen>
     <dimen name="margin_top_introduction_slide_4_text_body_8dp">8dp</dimen>
+    <!-- Profile Details Screen -->
+    <dimen name="height_profile_details_appbar_192dp">192dp</dimen>
 </resources>

@@ -39,6 +39,10 @@ public class ProfilesPresenter extends MvpPresenter<ProfilesView> {
                 .build());
     }
 
+    public void onProfileClick(@NonNull Integer id) {
+        getViewState().goToProfileDetails(id);
+    }
+
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();

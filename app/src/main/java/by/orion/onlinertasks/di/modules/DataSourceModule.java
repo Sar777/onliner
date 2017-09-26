@@ -14,6 +14,9 @@ import by.orion.onlinertasks.data.datasource.profile.details.remote.RemoteProfil
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.local.LocalProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.remote.RemoteProfilesDataSource;
+import by.orion.onlinertasks.data.datasource.regions.RegionsDataSource;
+import by.orion.onlinertasks.data.datasource.regions.local.LocalRegionsDataSource;
+import by.orion.onlinertasks.data.datasource.regions.remote.RemoteRegionsDataSource;
 import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.splash.local.LocalSplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
@@ -81,5 +84,21 @@ public class DataSourceModule {
     @NonNull
     ProfileDetailsDataSource provideRemoteProfileDetailsDataSource(@NonNull BaseService service) {
         return new RemoteProfileDetailsDataSource(service);
+    }
+
+    @Singleton
+    @LocalDataSource
+    @Provides
+    @NonNull
+    RegionsDataSource provideLocalRegionsDataSource(@NonNull StorIOSQLite storIOSQLite) {
+        return new LocalRegionsDataSource(storIOSQLite);
+    }
+
+    @Singleton
+    @RemoteDataSource
+    @Provides
+    @NonNull
+    RegionsDataSource provideRemoteRegionsDataSource(@NonNull BaseService service) {
+        return new RemoteRegionsDataSource(service);
     }
 }

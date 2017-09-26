@@ -2,8 +2,11 @@ package by.orion.onlinertasks.common.network.services;
 
 import android.support.annotation.NonNull;
 
+import java.util.List;
+
 import by.orion.onlinertasks.data.models.profile.ProfilesPage;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
+import by.orion.onlinertasks.data.models.regions.Region;
 import by.orion.onlinertasks.data.models.task.TasksPage;
 import io.reactivex.Single;
 import retrofit2.http.GET;
@@ -20,4 +23,7 @@ public interface BaseService {
 
     @GET("profiles/{id}")
     Single<Profile> getProfile(@Path("id") @NonNull Integer id);
+
+    @GET("regions")
+    Single<List<Region>> getRegions();
 }

@@ -31,7 +31,7 @@ public class MappersModule {
     @Singleton
     @Provides
     @NonNull
-    ProfileToProfileDetailsInformationMapper provideProfileToProfileDetailsInformationMapper() {
-        return new ProfileToProfileDetailsInformationMapper();
+    ProfileToProfileDetailsInformationMapper provideProfileToProfileDetailsInformationMapper(@NonNull Context context) {
+        return new ProfileToProfileDetailsInformationMapper(context);
     }
 }

@@ -7,6 +7,8 @@ import javax.inject.Singleton;
 
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
+import by.orion.onlinertasks.data.repository.regions.RegionsRepository;
+import by.orion.onlinertasks.data.repository.sections.SectionsRepository;
 import by.orion.onlinertasks.data.repository.splash.SplashRepository;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
 import by.orion.onlinertasks.di.modules.ApplicationModule;
@@ -41,4 +43,8 @@ public interface ApplicationComponent {
     ProfilesRepository provideProfilesRepository();
 
     ProfileDetailsRepository provideProfileDetailsRepository();
+
+    SectionsRepository provideSectionsRepository();
+
+    RegionsRepository provideRegionsRepository();
 }

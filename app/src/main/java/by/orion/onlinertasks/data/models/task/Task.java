@@ -37,7 +37,7 @@ public abstract class Task {
     @SerializedName("proposals_qty")
     public abstract Integer proposals_qty();
 
-    @SerializedName("location")
+    @SerializedName("executor_location")
     public abstract Location location();
 
     @SerializedName("deadline")

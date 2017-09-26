@@ -1,5 +1,7 @@
 package by.orion.onlinertasks.data.models.profile.details;
 
+import android.support.annotation.Nullable;
+
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
@@ -16,15 +18,18 @@ public abstract class Profile {
     @SerializedName("display_name")
     public abstract String displayName();
 
+    @Nullable
     @SerializedName("description")
     public abstract String description();
 
+    @Nullable
     @SerializedName("photo")
     public abstract String photo();
 
     @SerializedName("rating")
     public abstract Rating rating();
 
+    @Nullable
     @SerializedName("executor")
     public abstract Executor executor();
 

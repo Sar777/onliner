@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.regions.RegionsDataSource;
+import by.orion.onlinertasks.data.datasource.sections.SectionsDataSource;
 import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
@@ -15,6 +16,8 @@ import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepositoryImpl;
 import by.orion.onlinertasks.data.repository.regions.RegionsRepository;
 import by.orion.onlinertasks.data.repository.regions.RegionsRepositoryImpl;
+import by.orion.onlinertasks.data.repository.sections.SectionsRepository;
+import by.orion.onlinertasks.data.repository.sections.SectionsRepositoryImpl;
 import by.orion.onlinertasks.data.repository.splash.SplashRepository;
 import by.orion.onlinertasks.data.repository.splash.SplashRepositoryImpl;
 import by.orion.onlinertasks.data.repository.tasks.TasksRepository;
@@ -64,5 +67,13 @@ public class RepositoryModule {
     RegionsRepository provideRegionsRepository(@NonNull @LocalDataSource RegionsDataSource localDataSource,
                                                @NonNull @RemoteDataSource RegionsDataSource remoteDataSource) {
         return new RegionsRepositoryImpl(localDataSource, remoteDataSource);
+    }
+
+    @Singleton
+    @Provides
+    @NonNull
+    SectionsRepository provideSectionsRepository(@NonNull @LocalDataSource SectionsDataSource localDataSource,
+                                                @NonNull @RemoteDataSource SectionsDataSource remoteDataSource) {
+        return new SectionsRepositoryImpl(localDataSource, remoteDataSource);
     }
 }

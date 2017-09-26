@@ -36,7 +36,7 @@ public class InformationProfileDetailsFragment extends MvpAppCompatFragment impl
     TextView textViewDescription;
 
     @BindView(R.id.textview_profile_details_inf_location)
-    TextView textViewLocation;
+    TextView textViewExecutorLocation;
 
     @InjectPresenter
     InformationProfileDetailsPresenter presenter;
@@ -84,8 +84,28 @@ public class InformationProfileDetailsFragment extends MvpAppCompatFragment impl
     }
 
     @Override
-    public void setLocation(@NonNull String location) {
-        textViewLocation.setText(location);
+    public void showDescription() {
+        textViewDescription.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideDescription() {
+        textViewDescription.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setExecutorLocation(@NonNull String location) {
+        textViewExecutorLocation.setText(location);
+    }
+
+    @Override
+    public void showExecutorLocation() {
+        textViewExecutorLocation.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideExecutorLocation() {
+        textViewExecutorLocation.setVisibility(View.GONE);
     }
 
     @NonNull

@@ -11,6 +11,8 @@ import by.orion.onlinertasks.presentation.BaseMvpView;
 public interface InformationProfileDetailsView extends BaseMvpView {
 
     String TAG_DETAILS_LAYOUT = "TAG_DETAILS_LAYOUT";
+    String TAG_DESCRIPTION = "TAG_DESCRIPTION";
+    String TAG_EXECUTOR_LOCATION = "TAG_EXECUTOR_LOCATION";
 
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_DETAILS_LAYOUT)
     void showDetailsLayout();
@@ -20,5 +22,17 @@ public interface InformationProfileDetailsView extends BaseMvpView {
 
     void setDescription(@NonNull String description);
 
-    void setLocation(@NonNull String location);
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_DESCRIPTION)
+    void showDescription();
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_DESCRIPTION)
+    void hideDescription();
+
+    void setExecutorLocation(@NonNull String location);
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_EXECUTOR_LOCATION)
+    void showExecutorLocation();
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_EXECUTOR_LOCATION)
+    void hideExecutorLocation();
 }

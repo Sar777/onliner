@@ -43,4 +43,7 @@
     <string name="title_profile_details_page_information">Information</string>
     <string name="title_profile_details_page_portfolio">Portfolio</string>
     <string name="title_profile_details_page_reviews">Reviews</string>
+    <!-- Information -->
+    <string name="msg_profile_details_information_work_in">I work in</string>
+    <string name="msg_profile_details_information_work_all_location">I work all over Belarus</string>
 </resources>

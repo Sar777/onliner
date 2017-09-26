@@ -1,6 +1,7 @@
 package by.orion.onlinertasks.presentation.profile.details.pages;
 
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
@@ -44,7 +45,21 @@ public class InformationProfileDetailsPresenter extends MvpPresenter<Information
     }
 
     private void onProfileDetailsSuccess(@NonNull ProfileDetailsInformation information) {
-        getViewState().setDescription(information.description());
+        String description = information.description();
+        if (!TextUtils.isEmpty(description)) {
+            getViewState().setDescription(description);
+            getViewState().showDescription();
+        } else {
+            getViewState().hideDescription();
+        }
+
+        String executorLocation = information.executor_location();
+        if (!TextUtils.isEmpty(executorLocation)) {
+            getViewState().setExecutorLocation(executorLocation);
+            getViewState().showExecutorLocation();
+        } else {
+            getViewState().hideExecutorLocation();
+        }
 
         getViewState().showDetailsLayout();
     }

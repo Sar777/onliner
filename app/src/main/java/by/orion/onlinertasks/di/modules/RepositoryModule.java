@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.reviews.ProfileReviewsDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.regions.RegionsDataSource;
 import by.orion.onlinertasks.data.datasource.sections.SectionsDataSource;
@@ -12,6 +13,8 @@ import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepositoryImpl;
+import by.orion.onlinertasks.data.repository.profile.reviews.ProfileReviewsRepository;
+import by.orion.onlinertasks.data.repository.profile.reviews.ProfileReviewsRepositoryImpl;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepositoryImpl;
 import by.orion.onlinertasks.data.repository.regions.RegionsRepository;
@@ -73,7 +76,15 @@ public class RepositoryModule {
     @Provides
     @NonNull
     SectionsRepository provideSectionsRepository(@NonNull @LocalDataSource SectionsDataSource localDataSource,
-                                                @NonNull @RemoteDataSource SectionsDataSource remoteDataSource) {
+                                                 @NonNull @RemoteDataSource SectionsDataSource remoteDataSource) {
         return new SectionsRepositoryImpl(localDataSource, remoteDataSource);
+    }
+
+    @Singleton
+    @Provides
+    @NonNull
+    ProfileReviewsRepository provideProfileReviewsRepository(@NonNull @LocalDataSource ProfileReviewsDataSource localDataSource,
+                                                             @NonNull @RemoteDataSource ProfileReviewsDataSource remoteDataSource) {
+        return new ProfileReviewsRepositoryImpl(localDataSource, remoteDataSource);
     }
 }

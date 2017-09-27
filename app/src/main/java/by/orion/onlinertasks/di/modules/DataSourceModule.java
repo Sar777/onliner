@@ -11,6 +11,9 @@ import by.orion.onlinertasks.common.network.services.BaseService;
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.local.LocalProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.remote.RemoteProfileDetailsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.reviews.ProfileReviewsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.reviews.local.LocalProfileReviewsDataSource;
+import by.orion.onlinertasks.data.datasource.profile.reviews.remote.RemoteProfileReviewsDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.local.LocalProfilesDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.remote.RemoteProfilesDataSource;
@@ -119,5 +122,21 @@ public class DataSourceModule {
     @NonNull
     SectionsDataSource provideRemoteSectionsDataSource(@NonNull BaseService service) {
         return new RemoteSectionsDataSource(service);
+    }
+
+    @Singleton
+    @LocalDataSource
+    @Provides
+    @NonNull
+    ProfileReviewsDataSource provideLocalProfileReviewsDataSource(@NonNull StorIOSQLite storIOSQLite) {
+        return new LocalProfileReviewsDataSource(storIOSQLite);
+    }
+
+    @Singleton
+    @RemoteDataSource
+    @Provides
+    @NonNull
+    ProfileReviewsDataSource provideRemoteProfileReviewsDataSource(@NonNull BaseService service) {
+        return new RemoteProfileReviewsDataSource(service);
     }
 }

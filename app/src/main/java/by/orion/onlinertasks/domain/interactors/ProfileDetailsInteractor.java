@@ -4,8 +4,8 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
+import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
-import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import io.reactivex.Single;
 

@@ -7,8 +7,8 @@ import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
+import by.orion.onlinertasks.data.models.common.requests.ProfilesRequestParams;
 import by.orion.onlinertasks.data.models.profile.ProfilesPage;
-import by.orion.onlinertasks.data.models.requests.ProfilesRequestParams;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 

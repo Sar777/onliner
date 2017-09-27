@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import by.orion.onlinertasks.data.models.Page;
+import by.orion.onlinertasks.data.models.common.Page;
 
 @AutoValue
 public abstract class TasksPage {

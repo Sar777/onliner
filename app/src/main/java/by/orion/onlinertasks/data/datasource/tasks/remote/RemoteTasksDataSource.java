@@ -8,9 +8,9 @@ import javax.inject.Inject;
 
 import by.orion.onlinertasks.common.network.services.BaseService;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
+import by.orion.onlinertasks.data.models.common.requests.TasksRequestParams;
 import by.orion.onlinertasks.data.models.task.Task;
 import by.orion.onlinertasks.data.models.task.TasksPage;
-import by.orion.onlinertasks.data.models.requests.TasksRequestParams;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 

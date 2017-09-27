@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
+import by.orion.onlinertasks.data.models.common.requests.ProfilesRequestParams;
 import by.orion.onlinertasks.data.models.profile.ProfilesPage;
-import by.orion.onlinertasks.data.models.requests.ProfilesRequestParams;
 import by.orion.onlinertasks.di.qualifiers.LocalDataSource;
 import by.orion.onlinertasks.di.qualifiers.RemoteDataSource;
 import io.reactivex.Single;

@@ -6,6 +6,7 @@ import java.util.List;
 
 import by.orion.onlinertasks.data.models.profile.ProfilesPage;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
+import by.orion.onlinertasks.data.models.profile.reviews.ProfileReviewsPage;
 import by.orion.onlinertasks.data.models.regions.Region;
 import by.orion.onlinertasks.data.models.sections.Section;
 import by.orion.onlinertasks.data.models.sections.Sections;
@@ -25,6 +26,9 @@ public interface BaseService {
 
     @GET("profiles/{id}")
     Single<Profile> getProfile(@Path("id") @NonNull Integer id);
+
+    @GET("profiles/{id}/reviews")
+    Single<ProfileReviewsPage> getProfileReviews(@Path("id") @NonNull Integer id, @Query("page") @NonNull Integer page, @Query("role") @NonNull String role);
 
     @GET("regions")
     Single<List<Region>> getRegions();

@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.models.requests.ProfilesRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.ProfilesRequestParams;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.mappers.ListProfileToListProfileItemMapper;
 import by.orion.onlinertasks.presentation.main.fragments.profiles.models.ProfilePage;

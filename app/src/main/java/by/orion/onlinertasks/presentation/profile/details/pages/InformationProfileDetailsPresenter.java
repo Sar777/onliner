@@ -8,7 +8,7 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
 import by.orion.onlinertasks.domain.interactors.InformationProfileDetailsInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
 import by.orion.onlinertasks.presentation.profile.details.pages.models.ProfileDetailsInformation;

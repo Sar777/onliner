@@ -4,8 +4,8 @@ import android.support.annotation.NonNull;
 
 import by.orion.onlinertasks.common.network.services.BaseService;
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
+import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
-import by.orion.onlinertasks.data.models.requests.ProfileRequestParams;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
+import by.orion.onlinertasks.data.repository.profile.reviews.ProfileReviewsRepository;
 import by.orion.onlinertasks.data.repository.profiles.ProfilesRepository;
 import by.orion.onlinertasks.data.repository.regions.RegionsRepository;
 import by.orion.onlinertasks.data.repository.sections.SectionsRepository;
@@ -47,4 +48,6 @@ public interface ApplicationComponent {
     SectionsRepository provideSectionsRepository();
 
     RegionsRepository provideRegionsRepository();
+
+    ProfileReviewsRepository provideProfileReviewsRepository();
 }

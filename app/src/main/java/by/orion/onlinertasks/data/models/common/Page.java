@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.data.models;
+package by.orion.onlinertasks.data.models.common;
 
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;

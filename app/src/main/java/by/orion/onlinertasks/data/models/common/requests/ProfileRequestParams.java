@@ -1,10 +1,13 @@
-package by.orion.onlinertasks.data.models.requests;
+package by.orion.onlinertasks.data.models.common.requests;
+
+import android.support.annotation.NonNull;
 
 import com.google.auto.value.AutoValue;
 
 @AutoValue
 public abstract class ProfileRequestParams {
 
+    @NonNull
     public abstract Integer id();
 
     public static Builder builder() {

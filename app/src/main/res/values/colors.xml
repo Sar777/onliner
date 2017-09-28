@@ -16,4 +16,7 @@
     <color name="introduction_dot_light">@color/blueLight</color>
     <color name="introduction_dot_dark">@color/blueDark</color>
     <color name="introduction_buttons_text_color">@color/blueDark</color>
+
+    <!-- Login Screen -->
+    <color name="login_sign_in_text_color">@android:color/white</color>
 </resources>

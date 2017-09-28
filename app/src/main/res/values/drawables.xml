@@ -1,4 +1,4 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
     <!-- Splash Screen -->
     <item name="bg_splash" type="drawable">@drawable/background_splash</item>
     <item name="ic_splash_logo" type="drawable">@drawable/onliner_logo</item>
@@ -25,4 +25,8 @@
     <!-- Profile Details -->
     <!-- Page - Information -->
     <item name="ic_profile_details_information_location" type="drawable">@drawable/ic_location_16dp</item>
+
+    <!-- Login Screen -->
+    <item name="ic_login_logo" type="drawable">@drawable/onliner_logo</item>
+    <item name="bg_login_button_sign_in" type="drawable">@drawable/login_button_selector</item>
 </resources>

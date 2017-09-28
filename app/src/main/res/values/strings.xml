@@ -46,4 +46,11 @@
     <!-- Information -->
     <string name="msg_profile_details_information_work_in">I work in</string>
     <string name="msg_profile_details_information_work_all_location">I work all over Belarus</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Login Screen-->
+    <string name="msg_login_username_or_email">Username or email</string>
+    <string name="msg_login_password">Password</string>
+    <string name="msg_login_sign_in">Sign In</string>
+    <string name="msg_login_error_username_empty">Username is empty</string>
+    <string name="msg_login_error_password_empty">Password is empty</string>
 </resources>

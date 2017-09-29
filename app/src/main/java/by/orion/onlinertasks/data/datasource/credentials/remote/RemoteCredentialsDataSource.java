@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 
 import by.orion.onlinertasks.common.network.services.CredentialsService;
 import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
-import by.orion.onlinertasks.data.models.common.requests.SingInRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
 import by.orion.onlinertasks.data.models.credentials.AccessToken;
 import by.orion.onlinertasks.data.models.credentials.AccessTokenRequestBody;
 import io.reactivex.Completable;
@@ -31,12 +31,12 @@ public class RemoteCredentialsDataSource implements CredentialsDataSource {
     }
 
     @Override
-    public Single<AccessToken> singIn(@NonNull SingInRequestParams params) {
+    public Single<AccessToken> signIn(@NonNull SignInRequestParams params) {
         return service.accessToken(new AccessTokenRequestBody(params.username(), params.password()));
     }
 
     @Override
-    public Single<Account> saveAccount(@NonNull SingInRequestParams params, @NonNull AccessToken token) {
+    public Single<Account> saveAccount(@NonNull SignInRequestParams params, @NonNull AccessToken token) {
         throw new UnsupportedOperationException();
     }
 }

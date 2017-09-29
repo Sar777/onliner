@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import com.google.auto.value.AutoValue;
 
 @AutoValue
-public abstract class SingInRequestParams {
+public abstract class SignInRequestParams {
 
     @NonNull
     public abstract String username();
@@ -14,13 +14,13 @@ public abstract class SingInRequestParams {
     public abstract String password();
 
     public static Builder builder() {
-        return new AutoValue_SingInRequestParams.Builder();
+        return new AutoValue_SignInRequestParams.Builder();
     }
 
     @AutoValue.Builder
     public abstract static class Builder {
         public abstract Builder username(String username);
         public abstract Builder password(String password);
-        public abstract SingInRequestParams build();
+        public abstract SignInRequestParams build();
     }
 }

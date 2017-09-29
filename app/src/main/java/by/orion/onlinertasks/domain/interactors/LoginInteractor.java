@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
-import by.orion.onlinertasks.data.models.common.requests.SingInRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
 import by.orion.onlinertasks.data.repository.credentials.CredentialsRepository;
 import io.reactivex.Completable;
 
@@ -18,8 +18,8 @@ public class LoginInteractor {
         this.credentialsRepository = credentialsRepository;
     }
 
-    public Completable singIn(@NonNull String username, @NonNull String password) {
-        return credentialsRepository.singIn(SingInRequestParams.builder()
+    public Completable signIn(@NonNull String username, @NonNull String password) {
+        return credentialsRepository.signIn(SignInRequestParams.builder()
                 .username(username)
                 .password(password)
                 .build());

@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import by.orion.onlinertasks.common.account.AccountConstants;
 import by.orion.onlinertasks.common.exceptions.AccountManagerException;
 import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
-import by.orion.onlinertasks.data.models.common.requests.SingInRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
 import by.orion.onlinertasks.data.models.credentials.AccessToken;
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -45,12 +45,12 @@ public class LocalCredentialsDataSource implements CredentialsDataSource {
     }
 
     @Override
-    public Single<AccessToken> singIn(@NonNull SingInRequestParams params) {
+    public Single<AccessToken> signIn(@NonNull SignInRequestParams params) {
         return null;
     }
 
     @Override
-    public Single<Account> saveAccount(@NonNull SingInRequestParams params, @NonNull AccessToken token) {
+    public Single<Account> saveAccount(@NonNull SignInRequestParams params, @NonNull AccessToken token) {
         return Single.create(e -> {
             Bundle bundle = new Bundle();
             bundle.putString(BUNDLE_ACCESS_TOKEN, token.accessToken());

@@ -57,7 +57,7 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
             return;
         }
 
-        loginInteractor.singIn("OrionDev1", "1okm_nji9")
+        loginInteractor.signIn(username, password)
                 .compose(rxSchedulersProvider.getIoToMainTransformerCompletableCompletable())
                 .subscribe(this::onSignInSuccess, this::onSignInError);
     }

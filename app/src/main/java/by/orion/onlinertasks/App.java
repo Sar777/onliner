@@ -34,7 +34,7 @@ public class App extends Application {
                 .dataSourceModule(new DataSourceModule())
                 .repositoryModule(new RepositoryModule())
                 .mappersModule(new MappersModule())
-                .netModule(new NetModule(BuildConfig.BASE_DOMAIN))
+                .netModule(new NetModule())
                 .serviceModule(new ServiceModule())
                 .dbModule(new DbModule())
                 .build();

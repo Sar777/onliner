@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
 
+import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.reviews.ProfileReviewsDataSource;
 import by.orion.onlinertasks.data.datasource.profiles.ProfilesDataSource;
@@ -11,6 +12,8 @@ import by.orion.onlinertasks.data.datasource.regions.RegionsDataSource;
 import by.orion.onlinertasks.data.datasource.sections.SectionsDataSource;
 import by.orion.onlinertasks.data.datasource.splash.SplashDataSource;
 import by.orion.onlinertasks.data.datasource.tasks.TasksDataSource;
+import by.orion.onlinertasks.data.repository.credentials.CredentialsRepository;
+import by.orion.onlinertasks.data.repository.credentials.CredentialsRepositoryImpl;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepositoryImpl;
 import by.orion.onlinertasks.data.repository.profile.reviews.ProfileReviewsRepository;
@@ -86,5 +89,13 @@ public class RepositoryModule {
     ProfileReviewsRepository provideProfileReviewsRepository(@NonNull @LocalDataSource ProfileReviewsDataSource localDataSource,
                                                              @NonNull @RemoteDataSource ProfileReviewsDataSource remoteDataSource) {
         return new ProfileReviewsRepositoryImpl(localDataSource, remoteDataSource);
+    }
+
+    @Singleton
+    @Provides
+    @NonNull
+    CredentialsRepository provideCredentialsRepository(@NonNull @LocalDataSource CredentialsDataSource localDataSource,
+                                                       @NonNull @RemoteDataSource CredentialsDataSource remoteDataSource) {
+        return new CredentialsRepositoryImpl(localDataSource, remoteDataSource);
     }
 }

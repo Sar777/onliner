@@ -18,9 +18,12 @@ android {
             abortOnError false
         }
 
-        buildConfigField "String", "BASE_DOMAIN", "\"${base_domain}\""
+        buildConfigField "String", "TASKS_API", "\"${schema}${tasks_api}.${base_domain}/\""
+        buildConfigField "String", "CREDENTIALS_API", "\"${schema}${credentials_api}.${base_domain}/\""
         buildConfigField "String", "DATABASE_NAME", "\"${database_name}\""
         buildConfigField "Integer", "DATABASE_VERSION", "${database_version}"
+        // API
+        buildConfigField "String", "CLIENT_ID", "\"onliner_user\""
     }
     buildTypes {
         debug {

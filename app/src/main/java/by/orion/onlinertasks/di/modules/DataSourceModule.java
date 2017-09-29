@@ -1,5 +1,6 @@
 package by.orion.onlinertasks.di.modules;
 
+import android.accounts.AccountManager;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
@@ -8,6 +9,10 @@ import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.common.network.services.BaseService;
+import by.orion.onlinertasks.common.network.services.CredentialsService;
+import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
+import by.orion.onlinertasks.data.datasource.credentials.local.LocalCredentialsDataSource;
+import by.orion.onlinertasks.data.datasource.credentials.remote.RemoteCredentialsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.local.LocalProfileDetailsDataSource;
 import by.orion.onlinertasks.data.datasource.profile.details.remote.RemoteProfileDetailsDataSource;
@@ -138,5 +143,21 @@ public class DataSourceModule {
     @NonNull
     ProfileReviewsDataSource provideRemoteProfileReviewsDataSource(@NonNull BaseService service) {
         return new RemoteProfileReviewsDataSource(service);
+    }
+
+    @Singleton
+    @LocalDataSource
+    @Provides
+    @NonNull
+    CredentialsDataSource provideLocalCredentialsDataSource(@NonNull AccountManager accountManager) {
+        return new LocalCredentialsDataSource(accountManager);
+    }
+
+    @Singleton
+    @RemoteDataSource
+    @Provides
+    @NonNull
+    CredentialsDataSource provideRemoteCredentialsDataSource(@NonNull CredentialsService service) {
+        return new RemoteCredentialsDataSource(service);
     }
 }

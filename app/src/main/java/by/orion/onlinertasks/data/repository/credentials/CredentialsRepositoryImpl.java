@@ -1,0 +1,34 @@
+package by.orion.onlinertasks.data.repository.credentials;
+
+import android.support.annotation.NonNull;
+
+import javax.inject.Inject;
+
+import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
+import by.orion.onlinertasks.data.models.common.requests.SingInRequestParams;
+import by.orion.onlinertasks.di.qualifiers.LocalDataSource;
+import by.orion.onlinertasks.di.qualifiers.RemoteDataSource;
+import io.reactivex.Completable;
+
+public class CredentialsRepositoryImpl implements CredentialsRepository {
+
+    @NonNull
+    private final CredentialsDataSource localDataSource;
+
+    @NonNull
+    private final CredentialsDataSource remoteDataSource;
+
+    @Inject
+    public CredentialsRepositoryImpl(@NonNull @LocalDataSource CredentialsDataSource localDataSource,
+                                     @NonNull @RemoteDataSource CredentialsDataSource remoteDataSource) {
+        this.localDataSource = localDataSource;
+        this.remoteDataSource = remoteDataSource;
+    }
+
+    @Override
+    public Completable singIn(@NonNull SingInRequestParams params) {
+        return remoteDataSource.singIn(params)
+                .flatMap(token -> localDataSource.saveAccount(params, token))
+                .toCompletable();
+    }
+}

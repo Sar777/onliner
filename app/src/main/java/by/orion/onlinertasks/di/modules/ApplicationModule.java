@@ -1,5 +1,6 @@
 package by.orion.onlinertasks.di.modules;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -32,5 +33,12 @@ public class ApplicationModule {
     @NonNull
     SharedPreferences provideSharedPreferences() {
         return PreferenceManager.getDefaultSharedPreferences(context);
+    }
+
+    @Singleton
+    @Provides
+    @NonNull
+    AccountManager provideAccountManager() {
+        return AccountManager.get(context);
     }
 }

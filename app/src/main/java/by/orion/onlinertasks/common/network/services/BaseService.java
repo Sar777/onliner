@@ -18,8 +18,12 @@ import retrofit2.http.Query;
 
 public interface BaseService {
 
+    // Tasks
+
     @GET("tasks")
     Single<TasksPage> getAllTasks(@Query("page") @NonNull Integer page);
+
+    // Profiles
 
     @GET("profiles")
     Single<ProfilesPage> getAllProfiles(@Query("page") @NonNull Integer page);
@@ -29,6 +33,8 @@ public interface BaseService {
 
     @GET("profiles/{id}/reviews")
     Single<ProfileReviewsPage> getProfileReviews(@Path("id") @NonNull Integer id, @Query("page") @NonNull Integer page, @Query("role") @NonNull String role);
+
+    // Common
 
     @GET("regions")
     Single<List<Region>> getRegions();

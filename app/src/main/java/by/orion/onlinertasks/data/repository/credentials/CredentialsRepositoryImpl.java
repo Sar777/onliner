@@ -6,9 +6,11 @@ import javax.inject.Inject;
 
 import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
 import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
+import by.orion.onlinertasks.data.models.credentials.Credentials;
 import by.orion.onlinertasks.di.qualifiers.LocalDataSource;
 import by.orion.onlinertasks.di.qualifiers.RemoteDataSource;
 import io.reactivex.Completable;
+import io.reactivex.Single;
 
 public class CredentialsRepositoryImpl implements CredentialsRepository {
 
@@ -30,5 +32,10 @@ public class CredentialsRepositoryImpl implements CredentialsRepository {
         return remoteDataSource.signIn(params)
                 .flatMap(token -> localDataSource.saveAccount(params, token))
                 .toCompletable();
+    }
+
+    @Override
+    public Single<Credentials> refreshCredentials(@NonNull Credentials credentials) {
+        return remoteDataSource.refreshCredentials(credentials);
     }
 }

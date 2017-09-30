@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import javax.inject.Singleton;
 
+import by.orion.onlinertasks.common.account.AuthenticatorService;
 import by.orion.onlinertasks.data.repository.credentials.CredentialsRepository;
 import by.orion.onlinertasks.data.repository.profile.ProfileDetailsRepository;
 import by.orion.onlinertasks.data.repository.profile.reviews.ProfileReviewsRepository;
@@ -19,9 +20,9 @@ import by.orion.onlinertasks.di.modules.DataSourceModule;
 import by.orion.onlinertasks.di.modules.DbModule;
 import by.orion.onlinertasks.di.modules.MappersModule;
 import by.orion.onlinertasks.di.modules.NetModule;
+import by.orion.onlinertasks.di.modules.NetworkServiceModule;
 import by.orion.onlinertasks.di.modules.OkHttpInterceptorsModule;
 import by.orion.onlinertasks.di.modules.RepositoryModule;
-import by.orion.onlinertasks.di.modules.ServiceModule;
 import dagger.Component;
 
 @Singleton
@@ -31,7 +32,7 @@ import dagger.Component;
                        MappersModule.class,
                        ApiModule.class,
                        NetModule.class,
-                       ServiceModule.class,
+                       NetworkServiceModule.class,
                        DbModule.class,
                        OkHttpInterceptorsModule.class})
 public interface ApplicationComponent {
@@ -55,4 +56,6 @@ public interface ApplicationComponent {
     ProfileReviewsRepository provideProfileReviewsRepository();
 
     CredentialsRepository provideCredentialsRepository();
+
+    void inject(AuthenticatorService service);
 }

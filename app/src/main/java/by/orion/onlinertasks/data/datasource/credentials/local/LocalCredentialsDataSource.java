@@ -11,7 +11,7 @@ import by.orion.onlinertasks.common.account.AccountConstants;
 import by.orion.onlinertasks.common.exceptions.AccountManagerException;
 import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
 import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
-import by.orion.onlinertasks.data.models.credentials.AccessToken;
+import by.orion.onlinertasks.data.models.credentials.Credentials;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
@@ -35,27 +35,32 @@ public class LocalCredentialsDataSource implements CredentialsDataSource {
     }
 
     @Override
-    public Single<AccessToken> getValue(@NonNull String key) {
+    public Single<Credentials> getValue(@NonNull String key) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Completable setValue(@NonNull String key, @NonNull AccessToken value) {
+    public Completable setValue(@NonNull String key, @NonNull Credentials value) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Single<AccessToken> signIn(@NonNull SignInRequestParams params) {
+    public Single<Credentials> signIn(@NonNull SignInRequestParams params) {
         return null;
     }
 
     @Override
-    public Single<Account> saveAccount(@NonNull SignInRequestParams params, @NonNull AccessToken token) {
+    public Single<Credentials> refreshCredentials(@NonNull Credentials credentials) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Single<Account> saveAccount(@NonNull SignInRequestParams params, @NonNull Credentials token) {
         return Single.create(e -> {
             Bundle bundle = new Bundle();
             bundle.putString(BUNDLE_ACCESS_TOKEN, token.accessToken());
             bundle.putString(BUNDLE_REFRESH_TOKEN, token.accessToken());
-            bundle.putInt(BUNDLE_EXPIRE_IN, token.expiresIn());
+            bundle.putString(BUNDLE_EXPIRE_IN, String.valueOf(token.expiresIn().getTime()));
 
             Account account = new Account(params.username(), AccountConstants.TYPE);
             if (accountManager.addAccountExplicitly(account, params.password(), bundle)) {

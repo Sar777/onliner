@@ -15,16 +15,18 @@ import static by.orion.onlinertasks.di.modules.ApiModule.CREDENTIALS_API;
 import static by.orion.onlinertasks.di.modules.ApiModule.TASKS_API;
 
 @Module
-public class ServiceModule {
+public class NetworkServiceModule {
 
     @Singleton
     @Provides
+    @NonNull
     BaseService provideBaseService(@NonNull @Named(TASKS_API) Retrofit retrofit) {
         return retrofit.create(BaseService.class);
     }
 
     @Singleton
     @Provides
+    @NonNull
     CredentialsService provideCredentialsService(@NonNull @Named(CREDENTIALS_API) Retrofit retrofit) {
         return retrofit.create(CredentialsService.class);
     }

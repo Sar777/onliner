@@ -4,18 +4,29 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import javax.inject.Inject;
+
+import by.orion.onlinertasks.App;
+import by.orion.onlinertasks.data.repository.credentials.CredentialsRepository;
+
 public class AuthenticatorService extends Service {
 
-    private Authenticator authenticator;
+    @Inject
+    CredentialsRepository credentialsRepository;
+
+    private UserAuthenticator userAuthenticator;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        authenticator = new Authenticator(getApplicationContext());
+
+        App.getComponent().inject(this);
+
+        userAuthenticator = new UserAuthenticator(getApplicationContext(), credentialsRepository);
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        return authenticator.getIBinder();
+        return userAuthenticator.getIBinder();
     }
 }

@@ -14,7 +14,6 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.common.adapters.AutoValueGsonFactory;
-import by.orion.onlinertasks.common.network.interceptors.HeadersInterceptor;
 import by.orion.onlinertasks.di.qualifiers.OkHttpInterceptors;
 import by.orion.onlinertasks.di.qualifiers.OkHttpNetworkInterceptors;
 import dagger.Module;
@@ -72,13 +71,10 @@ public class NetModule {
     OkHttpClient provideOkHttpClient(@NonNull Cache cache,
                                      @OkHttpInterceptors @NonNull List<Interceptor> interceptors,
                                      @OkHttpNetworkInterceptors @NonNull List<Interceptor> networkInterceptors) {
-
         final OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
         for (Interceptor interceptor : interceptors) {
             okHttpBuilder.addInterceptor(interceptor);
         }
-
-        okHttpBuilder.addInterceptor(new HeadersInterceptor());
 
         for (Interceptor networkInterceptor : networkInterceptors) {
             okHttpBuilder.addNetworkInterceptor(networkInterceptor);

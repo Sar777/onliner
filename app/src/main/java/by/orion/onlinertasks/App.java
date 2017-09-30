@@ -11,8 +11,8 @@ import by.orion.onlinertasks.di.modules.DataSourceModule;
 import by.orion.onlinertasks.di.modules.DbModule;
 import by.orion.onlinertasks.di.modules.MappersModule;
 import by.orion.onlinertasks.di.modules.NetModule;
+import by.orion.onlinertasks.di.modules.NetworkServiceModule;
 import by.orion.onlinertasks.di.modules.RepositoryModule;
-import by.orion.onlinertasks.di.modules.ServiceModule;
 
 public class App extends Application {
 
@@ -35,7 +35,7 @@ public class App extends Application {
                 .repositoryModule(new RepositoryModule())
                 .mappersModule(new MappersModule())
                 .netModule(new NetModule())
-                .serviceModule(new ServiceModule())
+                .networkServiceModule(new NetworkServiceModule())
                 .dbModule(new DbModule())
                 .build();
     }

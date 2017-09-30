@@ -1,12 +1,12 @@
 package by.orion.onlinertasks;
 
-import android.support.annotation.Nullable;
+import android.support.annotation.NonNull;
 
 import by.orion.onlinertasks.di.components.ApplicationComponent;
 
 public class TestApplication extends App {
 
-    @Nullable
+    @NonNull
     @Override
     public ApplicationComponent buildComponent() {
         return null;

@@ -14,6 +14,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import by.orion.onlinertasks.common.adapters.AutoValueGsonFactory;
+import by.orion.onlinertasks.common.network.adapters.RxErrorHandlingCallAdapterFactory;
 import by.orion.onlinertasks.di.qualifiers.OkHttpInterceptors;
 import by.orion.onlinertasks.di.qualifiers.OkHttpNetworkInterceptors;
 import dagger.Module;
@@ -24,7 +25,6 @@ import okhttp3.OkHttpClient;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static by.orion.onlinertasks.di.modules.ApiModule.CREDENTIALS_API;
@@ -62,8 +62,8 @@ public class NetModule {
 
     @Provides
     @NonNull
-    CallAdapter.Factory provideRxJava2CallAdapterFactory() {
-        return RxJava2CallAdapterFactory.create();
+    CallAdapter.Factory provideRxErrorHandlingCallAdapterFactory() {
+        return RxErrorHandlingCallAdapterFactory.create();
     }
 
     @Provides
@@ -94,11 +94,11 @@ public class NetModule {
     @NonNull
     Retrofit provideTasksRetrofit(@NonNull @Named(TASKS_API) String url,
                                   @NonNull Converter.Factory converterFactory,
-                                  @NonNull CallAdapter.Factory rxAdapter,
+                                  @NonNull CallAdapter.Factory rxErrorAdapter,
                                   @NonNull OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(converterFactory)
-                .addCallAdapterFactory(rxAdapter)
+                .addCallAdapterFactory(rxErrorAdapter)
                 .baseUrl(url)
                 .client(okHttpClient)
                 .build();
@@ -110,11 +110,11 @@ public class NetModule {
     @NonNull
     Retrofit provideCredentialsRetrofit(@NonNull @Named(CREDENTIALS_API) String url,
                                         @NonNull Converter.Factory converterFactory,
-                                        @NonNull CallAdapter.Factory rxAdapter,
+                                        @NonNull CallAdapter.Factory rxErrorAdapter,
                                         @NonNull OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(converterFactory)
-                .addCallAdapterFactory(rxAdapter)
+                .addCallAdapterFactory(rxErrorAdapter)
                 .baseUrl(url)
                 .client(okHttpClient)
                 .build();

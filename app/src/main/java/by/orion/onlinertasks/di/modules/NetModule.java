@@ -88,35 +88,33 @@ public class NetModule {
                 .build();
     }
 
+    @Singleton
+    @Provides
+    @NonNull
+    Retrofit.Builder provideRetrofitBuilder(@NonNull Converter.Factory converterFactory,
+                                            @NonNull CallAdapter.Factory rxErrorAdapter,
+                                            @NonNull OkHttpClient okHttpClient) {
+        return new Retrofit.Builder()
+                .addConverterFactory(converterFactory)
+                .addCallAdapterFactory(rxErrorAdapter)
+                .client(okHttpClient);
+    }
+
     @Named(TASKS_API)
     @Singleton
     @Provides
     @NonNull
-    Retrofit provideTasksRetrofit(@NonNull @Named(TASKS_API) String url,
-                                  @NonNull Converter.Factory converterFactory,
-                                  @NonNull CallAdapter.Factory rxErrorAdapter,
-                                  @NonNull OkHttpClient okHttpClient) {
-        return new Retrofit.Builder()
-                .addConverterFactory(converterFactory)
-                .addCallAdapterFactory(rxErrorAdapter)
-                .baseUrl(url)
-                .client(okHttpClient)
-                .build();
+    Retrofit provideTasksRetrofit(@NonNull Retrofit.Builder retrofitBuilder,
+                                  @NonNull @Named(TASKS_API) String url) {
+        return retrofitBuilder.baseUrl(url).build();
     }
 
     @Named(CREDENTIALS_API)
     @Singleton
     @Provides
     @NonNull
-    Retrofit provideCredentialsRetrofit(@NonNull @Named(CREDENTIALS_API) String url,
-                                        @NonNull Converter.Factory converterFactory,
-                                        @NonNull CallAdapter.Factory rxErrorAdapter,
-                                        @NonNull OkHttpClient okHttpClient) {
-        return new Retrofit.Builder()
-                .addConverterFactory(converterFactory)
-                .addCallAdapterFactory(rxErrorAdapter)
-                .baseUrl(url)
-                .client(okHttpClient)
-                .build();
+    Retrofit provideCredentialsRetrofit(@NonNull Retrofit.Builder retrofitBuilder,
+                                        @NonNull @Named(CREDENTIALS_API) String url) {
+        return retrofitBuilder.baseUrl(url).build();
     }
 }

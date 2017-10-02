@@ -40,4 +40,12 @@
     <dimen name="margin_top_introduction_slide_4_text_body_8dp">8dp</dimen>
     <!-- Profile Details Screen -->
     <dimen name="height_profile_details_appbar_192dp">192dp</dimen>
+    <!-- Login Screen -->
+    <dimen name="margin_top_login_logo_30dp">30dp</dimen>
+    <dimen name="margin_top_login_username_60dp">60dp</dimen>
+    <dimen name="padding_login_username_18dp">18dp</dimen>
+    <dimen name="margin_top_login_password_10dp">10dp</dimen>
+    <dimen name="padding_login_password_18dp">18dp</dimen>
+    <dimen name="margin_top_login_button_sign_in_20dp">20dp</dimen>
+    <dimen name="margin_left_right_login_button_sign_in_70dp">70dp</dimen>
 </resources>

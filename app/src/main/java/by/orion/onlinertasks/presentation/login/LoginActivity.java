@@ -21,6 +21,7 @@ import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.di.components.presentation.DaggerLoginPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.LoginPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.LoginPresenterModule;
+import by.orion.onlinertasks.presentation.main.MainActivity;
 
 public class LoginActivity extends MvpAppCompatActivity implements LoginView {
 
@@ -84,6 +85,11 @@ public class LoginActivity extends MvpAppCompatActivity implements LoginView {
     @Override
     public void hidePasswordError() {
         textInputEditTextPassword.setError(null);
+    }
+
+    @Override
+    public void goToMainScreen() {
+        startActivity(MainActivity.newIntent(this));
     }
 
     private void initView() {

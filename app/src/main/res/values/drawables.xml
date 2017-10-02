@@ -28,5 +28,4 @@
 
     <!-- Login Screen -->
     <item name="ic_login_logo" type="drawable">@drawable/onliner_logo</item>
-    <item name="bg_login_button_sign_in" type="drawable">@drawable/login_button_selector</item>
 </resources>

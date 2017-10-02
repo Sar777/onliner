@@ -3,6 +3,7 @@ package by.orion.onlinertasks.presentation.login;
 import android.support.annotation.StringRes;
 
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
+import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
 import by.orion.onlinertasks.presentation.BaseMvpView;
@@ -23,4 +24,7 @@ public interface LoginView extends BaseMvpView {
 
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_PASSWORD_ERROR)
     void hidePasswordError();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void goToMainScreen();
 }

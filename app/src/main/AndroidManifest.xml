@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".presentation.login.LoginActivity"
+            android:name=".presentation.splash.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
@@ -29,7 +29,7 @@
         <activity android:name=".presentation.main.MainActivity" />
         <activity android:name=".presentation.introduction.IntroductionActivity" />
         <activity android:name=".presentation.profile.details.ProfileDetailsActivity" />
-        <!--<activity android:name=".presentation.login.LoginActivity" />-->
+        <activity android:name=".presentation.login.LoginActivity" />
 
         <service
             android:name=".common.account.AuthenticatorService"

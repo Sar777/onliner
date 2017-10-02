@@ -69,7 +69,7 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
     }
 
     private void onSignInSuccess() {
-
+        getViewState().goToMainScreen();
     }
 
     private void onSignInError(@NonNull Throwable throwable) throws IOException {

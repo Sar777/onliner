@@ -27,7 +27,7 @@ public class ProfilesPresenterTest {
     ProfilesInteractor profilesInteractorMock;
 
     @Mock
-    ProfilesView$$State articlesView$$StateMock;
+    ProfilesView$$State tasksView$$StateMock;
 
     private ProfilesPresenter profilesPresenter;
 
@@ -35,7 +35,7 @@ public class ProfilesPresenterTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         profilesPresenter = new ProfilesPresenter(new TestRxSchedulerProvider(), profilesInteractorMock);
-        profilesPresenter.setViewState(articlesView$$StateMock);
+        profilesPresenter.setViewState(tasksView$$StateMock);
     }
 
     @Test
@@ -46,9 +46,9 @@ public class ProfilesPresenterTest {
         profilesPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).showProgress();
-        verify(articlesView$$StateMock).hideError();
-        verify(articlesView$$StateMock).hideProfiles();
+        verify(tasksView$$StateMock).showProgress();
+        verify(tasksView$$StateMock).hideError();
+        verify(tasksView$$StateMock).hideProfiles();
     }
 
     @Test
@@ -59,9 +59,9 @@ public class ProfilesPresenterTest {
         profilesPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showProfiles();
-        verify(articlesView$$StateMock).addProfiles(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showProfiles();
+        verify(tasksView$$StateMock).addProfiles(any());
     }
 
     @Test
@@ -72,8 +72,8 @@ public class ProfilesPresenterTest {
         profilesPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showError();
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showError(any());
     }
 
     @Test
@@ -83,13 +83,13 @@ public class ProfilesPresenterTest {
         profilesPresenter.onLoadMoreProfilesRequest();
 
         // assert
-        verify(articlesView$$StateMock).disableLoadMoreProfiles();
+        verify(tasksView$$StateMock).disableLoadMoreProfiles();
 
-        verify(articlesView$$StateMock).enableLoadMoreProfiles();
+        verify(tasksView$$StateMock).enableLoadMoreProfiles();
 
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showProfiles();
-        verify(articlesView$$StateMock).addProfiles(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showProfiles();
+        verify(tasksView$$StateMock).addProfiles(any());
     }
 
     @Test
@@ -99,13 +99,13 @@ public class ProfilesPresenterTest {
         profilesPresenter.onLoadMoreProfilesRequest();
 
         // assert
-        verify(articlesView$$StateMock).disableLoadMoreProfiles();
+        verify(tasksView$$StateMock).disableLoadMoreProfiles();
 
-        verify(articlesView$$StateMock, times(0)).enableLoadMoreProfiles();
+        verify(tasksView$$StateMock, times(0)).enableLoadMoreProfiles();
 
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showProfiles();
-        verify(articlesView$$StateMock).addProfiles(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showProfiles();
+        verify(tasksView$$StateMock).addProfiles(any());
     }
 
     private ProfilePage getProfilePage(int page, int lastPage) {

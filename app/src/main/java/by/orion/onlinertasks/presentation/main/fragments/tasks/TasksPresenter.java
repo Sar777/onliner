@@ -7,6 +7,7 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import javax.inject.Inject;
 
+import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
 import by.orion.onlinertasks.data.models.common.requests.TasksRequestParams;
 import by.orion.onlinertasks.domain.interactors.TasksInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
@@ -71,6 +72,6 @@ public class TasksPresenter extends MvpPresenter<TasksView> {
 
     private void onAllTasksError(@NonNull Throwable throwable) {
         getViewState().hideProgress();
-        getViewState().showError();
+        getViewState().showError(new UnknownError());
     }
 }

@@ -8,6 +8,7 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import javax.inject.Inject;
 
+import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
 import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
 import by.orion.onlinertasks.domain.interactors.InformationProfileDetailsInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
@@ -66,6 +67,6 @@ public class InformationProfileDetailsPresenter extends MvpPresenter<Information
 
     private void onProfileDetailsError(@NonNull Throwable throwable) {
         getViewState().hideProgress();
-        getViewState().showError();
+        getViewState().showError(new UnknownError());
     }
 }

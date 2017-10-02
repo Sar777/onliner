@@ -1,6 +1,7 @@
 package by.orion.onlinertasks.presentation.splash;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -8,6 +9,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.di.components.presentation.DaggerSplashPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.SplashPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.SplashPresenterModule;
@@ -36,7 +38,7 @@ public class SplashActivity extends MvpAppCompatActivity implements SplashView {
     }
 
     @Override
-    public void showError() {
+    public void showError(@NonNull BaseError error) {
 
     }
 

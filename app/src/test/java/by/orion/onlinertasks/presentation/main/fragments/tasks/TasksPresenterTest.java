@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import by.orion.onlinertasks.AppTestRunner;
 import by.orion.onlinertasks.TestRxSchedulerProvider;
 import by.orion.onlinertasks.domain.interactors.TasksInteractor;
-import by.orion.onlinertasks.presentation.main.fragments.tasks.TasksPresenter;
-import by.orion.onlinertasks.presentation.main.fragments.tasks.TasksView$$State;
 import by.orion.onlinertasks.presentation.main.fragments.tasks.models.TaskPage;
 import io.reactivex.Single;
 
@@ -29,7 +27,7 @@ public class TasksPresenterTest {
     TasksInteractor tasksInteractorMock;
 
     @Mock
-    TasksView$$State articlesView$$StateMock;
+    TasksView$$State tasksView$$StateMock;
 
     private TasksPresenter tasksPresenter;
 
@@ -37,7 +35,7 @@ public class TasksPresenterTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         tasksPresenter = new TasksPresenter(new TestRxSchedulerProvider(), tasksInteractorMock);
-        tasksPresenter.setViewState(articlesView$$StateMock);
+        tasksPresenter.setViewState(tasksView$$StateMock);
     }
 
     @Test
@@ -48,9 +46,9 @@ public class TasksPresenterTest {
         tasksPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).showProgress();
-        verify(articlesView$$StateMock).hideError();
-        verify(articlesView$$StateMock).hideTasks();
+        verify(tasksView$$StateMock).showProgress();
+        verify(tasksView$$StateMock).hideError();
+        verify(tasksView$$StateMock).hideTasks();
     }
 
     @Test
@@ -61,9 +59,9 @@ public class TasksPresenterTest {
         tasksPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showTasks();
-        verify(articlesView$$StateMock).addTasks(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showTasks();
+        verify(tasksView$$StateMock).addTasks(any());
     }
 
     @Test
@@ -74,8 +72,8 @@ public class TasksPresenterTest {
         tasksPresenter.onFirstViewAttach();
 
         // assert
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showError();
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showError(any());
     }
 
     @Test
@@ -91,13 +89,13 @@ public class TasksPresenterTest {
         tasksPresenter.onLoadMoreTasksRequest();
 
         // assert
-        verify(articlesView$$StateMock).disableLoadMoreTasks();
+        verify(tasksView$$StateMock).disableLoadMoreTasks();
 
-        verify(articlesView$$StateMock).enableLoadMoreTasks();
+        verify(tasksView$$StateMock).enableLoadMoreTasks();
 
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showTasks();
-        verify(articlesView$$StateMock).addTasks(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showTasks();
+        verify(tasksView$$StateMock).addTasks(any());
     }
 
     @Test
@@ -113,12 +111,12 @@ public class TasksPresenterTest {
         tasksPresenter.onLoadMoreTasksRequest();
 
         // assert
-        verify(articlesView$$StateMock).disableLoadMoreTasks();
+        verify(tasksView$$StateMock).disableLoadMoreTasks();
 
-        verify(articlesView$$StateMock, times(0)).enableLoadMoreTasks();
+        verify(tasksView$$StateMock, times(0)).enableLoadMoreTasks();
 
-        verify(articlesView$$StateMock).hideProgress();
-        verify(articlesView$$StateMock).showTasks();
-        verify(articlesView$$StateMock).addTasks(any());
+        verify(tasksView$$StateMock).hideProgress();
+        verify(tasksView$$StateMock).showTasks();
+        verify(tasksView$$StateMock).addTasks(any());
     }
 }

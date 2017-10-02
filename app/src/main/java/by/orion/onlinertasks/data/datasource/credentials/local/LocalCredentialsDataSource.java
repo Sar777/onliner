@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.common.account.AccountConstants;
-import by.orion.onlinertasks.common.exceptions.AccountManagerException;
+import by.orion.onlinertasks.common.exceptions.errors.account.AccountManagerError;
 import by.orion.onlinertasks.data.datasource.credentials.CredentialsDataSource;
 import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
 import by.orion.onlinertasks.data.models.credentials.Credentials;
@@ -66,7 +66,7 @@ public class LocalCredentialsDataSource implements CredentialsDataSource {
             if (accountManager.addAccountExplicitly(account, params.password(), bundle)) {
                 e.onSuccess(account);
             } else {
-                e.onError(new AccountManagerException("Fail added account to account manager"));
+                e.onError(new AccountManagerError());
             }
         });
     }

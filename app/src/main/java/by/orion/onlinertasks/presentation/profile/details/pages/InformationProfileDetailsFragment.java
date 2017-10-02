@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.di.components.presentation.DaggerInformationProfileDetailsPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.InformationProfileDetailsPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.InformationProfileDetailsPresenterModule;
@@ -59,7 +60,7 @@ public class InformationProfileDetailsFragment extends MvpAppCompatFragment impl
     }
 
     @Override
-    public void showError() {
+    public void showError(@NonNull BaseError error) {
 
     }
 

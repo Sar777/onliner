@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
 import by.orion.onlinertasks.domain.interactors.SplashInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
 import io.reactivex.schedulers.Schedulers;
@@ -50,6 +51,6 @@ public class SplashPresenter extends MvpPresenter<SplashView> {
     }
 
     private void onFirstTimeLaunchError(@NonNull Throwable error) {
-        getViewState().showError();
+        getViewState().showError(new UnknownError());
     }
 }

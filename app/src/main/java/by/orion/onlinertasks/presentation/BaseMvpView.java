@@ -1,8 +1,12 @@
 package by.orion.onlinertasks.presentation;
 
+import android.support.annotation.NonNull;
+
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
+
+import by.orion.onlinertasks.common.exceptions.BaseError;
 
 @StateStrategyType(AddToEndSingleStrategy.class)
 public interface BaseMvpView extends MvpView {
@@ -15,7 +19,7 @@ public interface BaseMvpView extends MvpView {
     @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_PROGRESS)
     void hideProgress();
 
-    void showError();
+    void showError(@NonNull BaseError error);
 
     void hideError();
 }

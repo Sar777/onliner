@@ -27,6 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.common.utils.TextCustomUtils;
 import by.orion.onlinertasks.di.components.presentation.DaggerIntroductionPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.IntroductionPresenterComponent;
@@ -89,7 +90,7 @@ public class IntroductionActivity extends MvpAppCompatActivity implements Introd
     }
 
     @Override
-    public void showError() {
+    public void showError(@NonNull BaseError error) {
 
     }
 

@@ -20,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.common.utils.FragmentUtils;
 import by.orion.onlinertasks.di.components.presentation.DaggerMainPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.MainPresenterComponent;
@@ -84,7 +85,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
     }
 
     @Override
-    public void showError() {
+    public void showError(@NonNull BaseError error) {
 
     }
 

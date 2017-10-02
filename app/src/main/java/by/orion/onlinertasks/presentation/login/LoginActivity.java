@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.TextInputEditText;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -16,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.di.components.presentation.DaggerLoginPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.LoginPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.LoginPresenterModule;
@@ -55,8 +57,8 @@ public class LoginActivity extends MvpAppCompatActivity implements LoginView {
     }
 
     @Override
-    public void showError() {
-
+    public void showError(@NonNull BaseError error) {
+        Toast.makeText(this, getString(error.getMessageId()), Toast.LENGTH_LONG).show();
     }
 
     @Override

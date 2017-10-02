@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import by.orion.onlinertasks.App;
 import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.common.adapters.EndlessScrollListener;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.di.components.presentation.DaggerProfilesPresenterComponent;
 import by.orion.onlinertasks.di.components.presentation.ProfilesPresenterComponent;
 import by.orion.onlinertasks.di.modules.presentation.ProfilesPresenterModule;
@@ -52,7 +53,7 @@ public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesVi
     }
 
     @Override
-    public void showError() {
+    public void showError(@NonNull BaseError error) {
 
     }
 

@@ -1,5 +1,8 @@
 package by.orion.onlinertasks.common.exceptions;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 
@@ -10,16 +13,16 @@ import retrofit2.Retrofit;
 
 public class RetrofitException extends RuntimeException {
 
-    public static RetrofitException httpError(String url, Response response, Retrofit retrofit) {
+    public static RetrofitException httpError(@NonNull String url, @NonNull Response response, @NonNull Retrofit retrofit) {
         String message = response.code() + " " + response.message();
         return new RetrofitException(message, url, response, Kind.HTTP, null, retrofit);
     }
 
-    public static RetrofitException networkError(IOException exception) {
+    public static RetrofitException networkError(@NonNull IOException exception) {
         return new RetrofitException(exception.getMessage(), null, null, Kind.NETWORK, exception, null);
     }
 
-    public static RetrofitException unexpectedError(Throwable exception) {
+    public static RetrofitException unexpectedError(@NonNull Throwable exception) {
         return new RetrofitException(exception.getMessage(), null, null, Kind.UNEXPECTED, exception, null);
     }
 
@@ -36,12 +39,19 @@ public class RetrofitException extends RuntimeException {
         UNEXPECTED
     }
 
+    @Nullable
     private final String url;
+
+    @Nullable
     private final Response response;
+
+    @NonNull
     private final Kind kind;
+
+    @Nullable
     private final Retrofit retrofit;
 
-    RetrofitException(String message, String url, Response response, Kind kind, Throwable exception, Retrofit retrofit) {
+    private RetrofitException(@NonNull String message, @Nullable String url, @Nullable Response response, @NonNull Kind kind, @Nullable Throwable exception, @Nullable Retrofit retrofit) {
         super(message, exception);
         this.url = url;
         this.response = response;
@@ -50,21 +60,25 @@ public class RetrofitException extends RuntimeException {
     }
 
     /** The request URL which produced the error. */
+    @Nullable
     public String getUrl() {
         return url;
     }
 
     /** Response object containing status code, headers, body, etc. */
+    @Nullable
     public Response getResponse() {
         return response;
     }
 
     /** The event kind which triggered this error. */
+    @NonNull
     public Kind getKind() {
         return kind;
     }
 
     /** The Retrofit this request was executed on */
+    @Nullable
     public Retrofit getRetrofit() {
         return retrofit;
     }

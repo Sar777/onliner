@@ -12,6 +12,9 @@ import javax.inject.Inject;
 
 import by.orion.onlinertasks.R;
 import by.orion.onlinertasks.common.exceptions.RetrofitException;
+import by.orion.onlinertasks.common.exceptions.errors.NetworkError;
+import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
+import by.orion.onlinertasks.common.exceptions.errors.login.InvalidGrantError;
 import by.orion.onlinertasks.domain.interactors.LoginInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
 
@@ -72,6 +75,11 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
     private void onSignInError(@NonNull Throwable throwable) throws IOException {
         RetrofitException exception = (RetrofitException) throwable;
         if (exception.getKind() == RetrofitException.Kind.HTTP) {
+            getViewState().showError(new InvalidGrantError());
+        } else if (exception.getKind() == RetrofitException.Kind.NETWORK) {
+            getViewState().showError(new NetworkError());
+        } else {
+            getViewState().showError(new UnknownError());
         }
     }
 }

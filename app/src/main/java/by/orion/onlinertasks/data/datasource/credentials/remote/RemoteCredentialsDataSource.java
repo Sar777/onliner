@@ -39,6 +39,11 @@ public class RemoteCredentialsDataSource implements CredentialsDataSource {
     }
 
     @Override
+    public Single<Boolean> isAuthorized() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public Single<Credentials> refreshCredentials(@NonNull Credentials credentials) {
         return service.refreshCredentials(credentials.refreshToken(), AuthenticationClients.USER, AuthenticationGrants.PASSWORD);
     }

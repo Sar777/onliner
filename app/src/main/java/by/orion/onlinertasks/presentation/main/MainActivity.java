@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -87,7 +88,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
 
     @Override
     public void showError(@NonNull BaseError error) {
-
+        Toast.makeText(this, getString(error.getMessageId()), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -108,6 +109,16 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Navi
     @Override
     public void goToLoginScreen() {
         startActivity(LoginActivity.newIntent(this));
+    }
+
+    @Override
+    public void showLoginButton() {
+        navigationView.getMenu().findItem(R.id.nav_login).setVisible(true);
+    }
+
+    @Override
+    public void hideLoginButton() {
+        navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
     }
 
     private void initToolbar() {

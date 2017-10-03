@@ -53,6 +53,11 @@ public class LocalCredentialsDataSource implements CredentialsDataSource {
     }
 
     @Override
+    public Single<Boolean> isAuthorized() {
+        return Single.create(e -> e.onSuccess(accountManager.getAccountsByType(AccountConstants.TYPE).length > 0));
+    }
+
+    @Override
     public Single<Credentials> refreshCredentials(@NonNull Credentials credentials) {
         throw new UnsupportedOperationException();
     }

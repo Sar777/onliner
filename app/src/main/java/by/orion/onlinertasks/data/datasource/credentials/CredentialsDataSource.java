@@ -12,6 +12,8 @@ public interface CredentialsDataSource extends DataSource<String, Credentials> {
 
     Single<Credentials> signIn(@NonNull SignInRequestParams params);
 
+    Single<Boolean> isAuthorized();
+
     Single<Credentials> refreshCredentials(@NonNull Credentials credentials);
 
     Single<Account> saveAccount(@NonNull SignInRequestParams params, @NonNull Credentials token);

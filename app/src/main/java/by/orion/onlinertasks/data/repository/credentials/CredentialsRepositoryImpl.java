@@ -35,6 +35,11 @@ public class CredentialsRepositoryImpl implements CredentialsRepository {
     }
 
     @Override
+    public Single<Boolean> isAuthorized() {
+        return localDataSource.isAuthorized();
+    }
+
+    @Override
     public Single<Credentials> refreshCredentials(@NonNull Credentials credentials) {
         return remoteDataSource.refreshCredentials(credentials);
     }

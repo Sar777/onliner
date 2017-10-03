@@ -12,5 +12,7 @@ public interface CredentialsRepository extends Repository {
 
     Completable signIn(@NonNull SignInRequestParams params);
 
+    Single<Boolean> isAuthorized();
+
     Single<Credentials> refreshCredentials(@NonNull Credentials credentials);
 }

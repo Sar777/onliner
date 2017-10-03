@@ -59,7 +59,7 @@ public class LoginActivity extends MvpAppCompatActivity implements LoginView {
 
     @Override
     public void showError(@NonNull BaseError error) {
-        Toast.makeText(this, getString(error.getMessageId()), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(error.getMessageId()), Toast.LENGTH_SHORT).show();
     }
 
     @Override

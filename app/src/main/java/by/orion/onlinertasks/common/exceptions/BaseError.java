@@ -17,6 +17,12 @@ public abstract class BaseError extends RuntimeException implements Error {
         this.uri = Uri.EMPTY;
     }
 
+    public BaseError(@NonNull Throwable cause) {
+        super(cause);
+        this.messageId = 0;
+        this.uri = Uri.EMPTY;
+    }
+
     public BaseError(@StringRes int messageId, @NonNull Throwable cause) {
         super(cause);
         this.messageId = messageId;

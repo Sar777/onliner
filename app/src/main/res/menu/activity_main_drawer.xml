@@ -12,4 +12,10 @@
             android:icon="@drawable/ic_nav_menu_all_profiles"
             android:title="@string/action_nav_menu_all_profiles" />
     </group>
+    <group>
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_nav_menu_login"
+            android:title="@string/action_nav_menu_login" />
+    </group>
 </menu>

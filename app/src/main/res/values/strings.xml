@@ -21,6 +21,7 @@
     <!-- Main Screen -->
     <string name="action_nav_menu_all_tasks">All Tasks</string>
     <string name="action_nav_menu_all_profiles">All Profiles</string>
+    <string name="action_nav_menu_login">Login</string>
     <!-- Task Item -->
     <string name="msg_task_contractual">Contractual</string>
     <!-- Profile Item -->

@@ -4,4 +4,6 @@ public enum MenuOption {
 
     ALL_TASKS,
     ALL_PROFILES,
+    //
+    LOGIN,
 }

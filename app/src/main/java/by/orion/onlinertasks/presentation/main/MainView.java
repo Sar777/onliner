@@ -11,4 +11,6 @@ public interface MainView extends BaseMvpView {
     void showAllTasks();
 
     void showAllProfiles();
+
+    void goToLoginScreen();
 }

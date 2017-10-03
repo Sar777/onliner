@@ -24,6 +24,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
             case ALL_PROFILES:
                 getViewState().showAllProfiles();
                 break;
+            case LOGIN:
+                getViewState().goToLoginScreen();
+                break;
             default:
                 break;
         }

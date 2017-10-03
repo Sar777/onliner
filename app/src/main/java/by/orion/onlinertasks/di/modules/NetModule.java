@@ -15,6 +15,8 @@ import javax.inject.Singleton;
 
 import by.orion.onlinertasks.common.adapters.AutoValueGsonFactory;
 import by.orion.onlinertasks.common.network.adapters.RxErrorHandlingCallAdapterFactory;
+import by.orion.onlinertasks.data.deserializers.CredentialsConverter;
+import by.orion.onlinertasks.data.models.credentials.Credentials;
 import by.orion.onlinertasks.di.qualifiers.OkHttpInterceptors;
 import by.orion.onlinertasks.di.qualifiers.OkHttpNetworkInterceptors;
 import dagger.Module;
@@ -33,6 +35,7 @@ import static by.orion.onlinertasks.di.modules.ApiModule.TASKS_API;
 @Module
 public class NetModule {
 
+    @Singleton
     @Provides
     @NonNull
     Cache provideOkHttpCache(@NonNull Context context) {
@@ -40,32 +43,38 @@ public class NetModule {
         return new Cache(context.getCacheDir(), cacheSize);
     }
 
+    @Singleton
     @Provides
     @NonNull
     Gson provideGson(@NonNull TypeAdapterFactory typeAdapterFactory) {
         return new GsonBuilder()
+                .registerTypeAdapter(Credentials.class, new CredentialsConverter())
                 .registerTypeAdapterFactory(typeAdapterFactory)
                 .create();
     }
 
+    @Singleton
     @Provides
     @NonNull
     TypeAdapterFactory provideAutoValueGsonTypeAdapterFactory() {
         return AutoValueGsonFactory.create();
     }
 
+    @Singleton
     @Provides
     @NonNull
     Converter.Factory provideGsonConverterFactory(@NonNull Gson gson) {
         return GsonConverterFactory.create(gson);
     }
 
+    @Singleton
     @Provides
     @NonNull
     CallAdapter.Factory provideRxErrorHandlingCallAdapterFactory() {
         return RxErrorHandlingCallAdapterFactory.create();
     }
 
+    @Singleton
     @Provides
     @NonNull
     OkHttpClient provideOkHttpClient(@NonNull Cache cache,

@@ -17,6 +17,7 @@
     <!-- Main Screen -->
     <item name="ic_nav_menu_all_tasks" type="drawable">@drawable/onliner_logo</item>
     <item name="ic_nav_menu_all_profiles" type="drawable">@drawable/onliner_logo</item>
+    <item name="ic_nav_menu_login" type="drawable">@drawable/onliner_logo</item>
     <!-- Task Item -->
     <item name="ic_task_location" type="drawable">@drawable/ic_location_16dp</item>
     <item name="ic_task_proposal" type="drawable">@drawable/ic_proposal_16dp</item>

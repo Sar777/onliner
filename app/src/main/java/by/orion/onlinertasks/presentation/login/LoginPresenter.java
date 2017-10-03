@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.R;
+import by.orion.onlinertasks.common.exceptions.BaseError;
 import by.orion.onlinertasks.common.exceptions.RetrofitException;
 import by.orion.onlinertasks.common.exceptions.errors.NetworkError;
 import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
@@ -73,13 +74,18 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
     }
 
     private void onSignInError(@NonNull Throwable throwable) throws IOException {
-        RetrofitException exception = (RetrofitException) throwable;
-        if (exception.getKind() == RetrofitException.Kind.HTTP) {
-            getViewState().showError(new InvalidGrantError());
-        } else if (exception.getKind() == RetrofitException.Kind.NETWORK) {
-            getViewState().showError(new NetworkError());
-        } else {
-            getViewState().showError(new UnknownError());
+        if (throwable instanceof RetrofitException) {
+            RetrofitException exception = (RetrofitException) throwable;
+            if (exception.getKind() == RetrofitException.Kind.HTTP) {
+                getViewState().showError(new InvalidGrantError());
+            } else if (exception.getKind() == RetrofitException.Kind.NETWORK) {
+                getViewState().showError(new NetworkError());
+            } else {
+                getViewState().showError(new UnknownError(throwable));
+            }
+        }
+        else if (throwable instanceof BaseError) {
+            getViewState().showError((BaseError)throwable);
         }
     }
 }

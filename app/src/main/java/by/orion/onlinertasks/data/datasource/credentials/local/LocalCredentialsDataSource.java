@@ -2,6 +2,7 @@ package by.orion.onlinertasks.data.datasource.credentials.local;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -14,6 +15,8 @@ import by.orion.onlinertasks.data.models.common.requests.SignInRequestParams;
 import by.orion.onlinertasks.data.models.credentials.Credentials;
 import io.reactivex.Completable;
 import io.reactivex.Single;
+
+import static android.os.Build.VERSION;
 
 public class LocalCredentialsDataSource implements CredentialsDataSource {
 
@@ -61,6 +64,15 @@ public class LocalCredentialsDataSource implements CredentialsDataSource {
             bundle.putString(BUNDLE_ACCESS_TOKEN, token.accessToken());
             bundle.putString(BUNDLE_REFRESH_TOKEN, token.accessToken());
             bundle.putString(BUNDLE_EXPIRE_IN, String.valueOf(token.expiresIn().getTime()));
+
+            Account[] accounts = accountManager.getAccountsByType(AccountConstants.TYPE);
+            for (Account oldAccount : accounts) {
+                if (VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+                    accountManager.removeAccountExplicitly(oldAccount);
+                } else {
+                    accountManager.removeAccount(oldAccount, null, null);
+                }
+            }
 
             Account account = new Account(params.username(), AccountConstants.TYPE);
             if (accountManager.addAccountExplicitly(account, params.password(), bundle)) {

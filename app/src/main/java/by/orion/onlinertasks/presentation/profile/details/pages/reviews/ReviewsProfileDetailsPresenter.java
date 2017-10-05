@@ -22,16 +22,16 @@ public class ReviewsProfileDetailsPresenter extends MvpPresenter<ReviewsProfileD
     private final Integer id;
 
     @NonNull
-    private final RxSchedulersProvider rxSchedulersProvider;
-
-    @NonNull
     private final ReviewsProfileDetailsInteractor reviewsProfileDetailsInteractor;
 
+    @NonNull
+    private final RxSchedulersProvider rxSchedulersProvider;
+
     @Inject
-    public ReviewsProfileDetailsPresenter(@NonNull Integer id, @NonNull RxSchedulersProvider rxSchedulersProvider, @NonNull ReviewsProfileDetailsInteractor reviewsProfileDetailsInteractor) {
+    public ReviewsProfileDetailsPresenter(@NonNull Integer id, @NonNull ReviewsProfileDetailsInteractor reviewsProfileDetailsInteractor, @NonNull RxSchedulersProvider rxSchedulersProvider) {
         this.id = id;
-        this.rxSchedulersProvider = rxSchedulersProvider;
         this.reviewsProfileDetailsInteractor = reviewsProfileDetailsInteractor;
+        this.rxSchedulersProvider = rxSchedulersProvider;
     }
 
     @Override

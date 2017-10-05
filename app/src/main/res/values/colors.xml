@@ -6,6 +6,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="grayLight">#f4f4f4</color>
+    <color name="grayLight2">#f6f6f6</color>
     <color name="blueLight">#0272e0</color>
     <color name="blueDark">#004d99</color>
 
@@ -18,4 +19,7 @@
     <color name="introduction_buttons_text_color">@color/blueDark</color>
 
     <!-- Login Screen -->
+
+    <!-- Review Empty Item -->
+    <color name="review_empty_icon_background">@color/grayLight2</color>
 </resources>

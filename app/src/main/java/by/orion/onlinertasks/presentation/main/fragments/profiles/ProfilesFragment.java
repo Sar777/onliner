@@ -3,6 +3,7 @@ package by.orion.onlinertasks.presentation.main.fragments.profiles;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -108,6 +109,15 @@ public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesVi
         startActivity(ProfileDetailsActivity.newIntent(getContext(), id));
     }
 
+    private void initView() {
+        adapter = new ProfilesAdapter(id -> presenter.onProfileClick(id));
+        adapter.setHasStableIds(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        recyclerView.setAdapter(adapter);
+    }
+
     @NonNull
     @ProvidePresenter
     ProfilesPresenter providePresenter() {
@@ -117,14 +127,6 @@ public class ProfilesFragment extends MvpAppCompatFragment implements ProfilesVi
                 .build();
 
         return profilesPresenterComponent.getPresenter();
-    }
-
-    private void initView() {
-        adapter = new ProfilesAdapter(id -> presenter.onProfileClick(id));
-        adapter.setHasStableIds(true);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
     }
 
     @NonNull

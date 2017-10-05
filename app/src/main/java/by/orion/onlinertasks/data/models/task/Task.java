@@ -45,7 +45,7 @@ public abstract class Task {
     public abstract String deadline();
 
     @SerializedName("created_at")
-    public abstract String created_at();
+    public abstract String createdAt();
 
     @SerializedName("url")
     public abstract String url();

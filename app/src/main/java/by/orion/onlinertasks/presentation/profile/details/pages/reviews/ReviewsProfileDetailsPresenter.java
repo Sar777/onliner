@@ -45,8 +45,9 @@ public class ReviewsProfileDetailsPresenter extends MvpPresenter<ReviewsProfileD
                 .subscribe(this::onProfileReviewsSuccess, this::onProfileReviewsError);
     }
 
-    private void onProfileReviewsSuccess(@NonNull List<ReviewItem> reviewItems) {
-
+    private void onProfileReviewsSuccess(@NonNull List<ReviewItem> reviewsItems) {
+        getViewState().hideProgress();
+        getViewState().addReviews(reviewsItems);
     }
 
     private void onProfileReviewsError(@NonNull Throwable throwable) {

@@ -29,4 +29,6 @@
 
     <!-- Login Screen -->
     <item name="ic_login_logo" type="drawable">@drawable/onliner_logo</item>
+    <!-- Review Executor Item -->
+    <item name="ic_empty_reviews" type="drawable">@drawable/ic_comment_40dp</item>
 </resources>

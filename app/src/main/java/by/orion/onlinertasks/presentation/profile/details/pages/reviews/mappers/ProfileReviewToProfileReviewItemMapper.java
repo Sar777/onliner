@@ -2,6 +2,8 @@ package by.orion.onlinertasks.presentation.profile.details.pages.reviews.mappers
 
 import android.support.annotation.NonNull;
 
+import com.github.thunder413.datetimeutils.DateTimeUtils;
+
 import by.orion.onlinertasks.common.GenericObjectMapper;
 import by.orion.onlinertasks.data.models.common.Role;
 import by.orion.onlinertasks.data.models.profile.reviews.Review;
@@ -19,6 +21,7 @@ public class ProfileReviewToProfileReviewItemMapper implements GenericObjectMapp
                 .review(review.review())
                 .author(new ProfileReviewAuthorToProfileReviewAuthorItemMapper().map(review.author()))
                 .task(new ProfileReviewTaskToProfileReviewTaskItemMapper().map(review.task()))
+                .createdAt(DateTimeUtils.formatDate(review.createdAt()))
                 .profileRole(Role.get(review.profileRole()))
                 .build();
     }

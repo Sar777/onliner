@@ -38,7 +38,7 @@ public class TaskToTaskItemMapper implements GenericObjectMapper<Task, TaskItem>
                 .proposalsQty(task.proposals_qty())
                 .location(new TaskLocationToTaskLocationItemMapper().map(task.location()))
                 .deadline(String.format("%s %s", context.getString(R.string.common_before), task.deadline()))
-                .createdAt(task.created_at())
+                .createdAt(task.createdAt())
                 .author(new TaskAuthorToTaskAuthorItemMapper().map(task.author()))
                 .section(new TaskSectionToTaskSectionItemMapper().map(task.section()))
                 .build();

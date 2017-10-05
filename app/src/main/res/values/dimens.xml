@@ -48,4 +48,14 @@
     <dimen name="padding_login_password_18dp">18dp</dimen>
     <dimen name="margin_top_login_button_sign_in_20dp">20dp</dimen>
     <dimen name="margin_left_right_login_button_sign_in_70dp">70dp</dimen>
+    <!-- Review Executor Item -->
+    <dimen name="size_review_executor_avatar_60dp">60dp</dimen>
+    <dimen name="margin_top_left_review_executor_avatar_16dp">16dp</dimen>
+    <dimen name="margin_right_left_review_executor_layout_text_16dp">16dp</dimen>
+    <dimen name="padding_top_bottom_review_executor_layout_text_16dp">16dp</dimen>
+    <dimen name="margin_top_review_executor_rating_5dp">5dp</dimen>
+    <dimen name="min_height_review_executor_72dp">72dp</dimen>
+    <!-- Review Empty Item -->
+    <dimen name="size_review_empty_icon_100dp">100dp</dimen>
+    <dimen name="margin_top_review_empty_text_16dp">16dp</dimen>
 </resources>

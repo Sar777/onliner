@@ -54,6 +54,7 @@ dependencies {
     compile libraries.supportCardView
     compile libraries.constraintLayout
     compile libraries.customTabs
+    compile libraries.circleImageView
 
     compile libraries.dagger
     apt libraries.daggerCompiler

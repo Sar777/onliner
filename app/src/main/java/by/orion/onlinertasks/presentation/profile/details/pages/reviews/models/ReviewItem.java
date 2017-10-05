@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
 
+import java.util.Date;
+
 import by.orion.onlinertasks.data.models.common.Role;
 
 @AutoValue
@@ -30,6 +32,9 @@ public abstract class ReviewItem {
     public abstract TaskItem task();
 
     @NonNull
+    public abstract Date createdAt();
+
+    @NonNull
     public abstract Role profileRole();
 
     public static Builder builder() {
@@ -44,6 +49,7 @@ public abstract class ReviewItem {
         public abstract Builder review(String review);
         public abstract Builder author(AuthorItem author);
         public abstract Builder task(TaskItem task);
+        public abstract Builder createdAt(Date date);
         public abstract Builder profileRole(Role role);
         public abstract ReviewItem build();
     }

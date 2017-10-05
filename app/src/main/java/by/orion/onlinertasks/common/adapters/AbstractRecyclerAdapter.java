@@ -54,7 +54,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
 
     @Override
     public int getItemCount() {
-        return resources.size();
+        return resources.isEmpty() ? 1 : resources.size();
     }
 
     public void setResources(@NonNull List<T> resources) {
@@ -114,7 +114,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
 
     @Nullable
     public T getItem(int position) {
-        return resources.get(position);
+        return resources.isEmpty() ? null : resources.get(position);
     }
 
     private int getItemPosition(@NonNull T item) {

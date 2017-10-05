@@ -13,5 +13,13 @@ import by.orion.onlinertasks.presentation.profile.details.pages.reviews.models.R
 @StateStrategyType(AddToEndSingleStrategy.class)
 public interface ReviewsProfileDetailsView extends BaseMvpView {
 
-    void addReviews(@NonNull List<ReviewItem> reviewsList);
+    String TAG_REVIEWS = "TAG_REVIEWS";
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_REVIEWS)
+    void showReviews();
+
+    @StateStrategyType(value = AddToEndSingleStrategy.class, tag = TAG_REVIEWS)
+    void hideReviews();
+
+    void setReviews(@NonNull List<ReviewItem> reviewsList);
 }

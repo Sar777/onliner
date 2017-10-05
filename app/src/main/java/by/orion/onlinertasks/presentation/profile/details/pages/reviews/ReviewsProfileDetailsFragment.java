@@ -74,8 +74,19 @@ public class ReviewsProfileDetailsFragment extends MvpAppCompatFragment implemen
     }
 
     @Override
-    public void addReviews(@NonNull List<ReviewItem> reviewsList) {
-        adapter.addAll(reviewsList);
+    public void showReviews() {
+        recyclerView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideReviews() {
+        recyclerView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setReviews(@NonNull List<ReviewItem> reviewsList) {
+        adapter.setResources(reviewsList);
+        adapter.notifyDataSetChanged();
     }
 
     private void initView() {

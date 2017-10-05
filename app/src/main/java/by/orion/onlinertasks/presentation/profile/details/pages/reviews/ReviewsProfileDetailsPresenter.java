@@ -39,6 +39,7 @@ public class ReviewsProfileDetailsPresenter extends MvpPresenter<ReviewsProfileD
         super.onFirstViewAttach();
 
         getViewState().showProgress();
+        getViewState().hideReviews();
 
         reviewsProfileDetailsInteractor.getProfileReviews(ProfileReviewsRequestParams.builder().id(id).build())
                 .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
@@ -47,7 +48,8 @@ public class ReviewsProfileDetailsPresenter extends MvpPresenter<ReviewsProfileD
 
     private void onProfileReviewsSuccess(@NonNull List<ReviewItem> reviewsItems) {
         getViewState().hideProgress();
-        getViewState().addReviews(reviewsItems);
+        getViewState().setReviews(reviewsItems);
+        getViewState().showReviews();
     }
 
     private void onProfileReviewsError(@NonNull Throwable throwable) {

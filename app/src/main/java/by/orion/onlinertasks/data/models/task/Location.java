@@ -28,8 +28,8 @@ public abstract class Location {
     @SerializedName("formatted_locality")
     public abstract String formattedLocality();
 
-    @SerializedName("street_address")
     @Nullable
+    @SerializedName("street_address")
     public abstract String streetAddress();
 
     public static TypeAdapter<Location> typeAdapter(Gson gson) {

@@ -18,7 +18,6 @@ import by.orion.onlinertasks.di.modules.ApiModule;
 import by.orion.onlinertasks.di.modules.ApplicationModule;
 import by.orion.onlinertasks.di.modules.DataSourceModule;
 import by.orion.onlinertasks.di.modules.DbModule;
-import by.orion.onlinertasks.di.modules.MappersModule;
 import by.orion.onlinertasks.di.modules.NetModule;
 import by.orion.onlinertasks.di.modules.NetworkServiceModule;
 import by.orion.onlinertasks.di.modules.OkHttpInterceptorsModule;
@@ -29,7 +28,6 @@ import dagger.Component;
 @Component(modules = { ApplicationModule.class,
                        RepositoryModule.class,
                        DataSourceModule.class,
-                       MappersModule.class,
                        ApiModule.class,
                        NetModule.class,
                        NetworkServiceModule.class,

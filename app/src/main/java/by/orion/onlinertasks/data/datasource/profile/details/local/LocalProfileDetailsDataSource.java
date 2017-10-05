@@ -7,7 +7,7 @@ import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.data.datasource.profile.details.ProfileDetailsDataSource;
-import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.ProfileDetailsRequestParams;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -33,7 +33,7 @@ public class LocalProfileDetailsDataSource implements ProfileDetailsDataSource {
     }
 
     @Override
-    public Single<Profile> getProfile(@NonNull ProfileRequestParams params) {
+    public Single<Profile> getProfile(@NonNull ProfileDetailsRequestParams params) {
         throw new UnsupportedOperationException();
     }
 }

@@ -9,7 +9,6 @@ import by.orion.onlinertasks.di.components.DaggerApplicationComponent;
 import by.orion.onlinertasks.di.modules.ApplicationModule;
 import by.orion.onlinertasks.di.modules.DataSourceModule;
 import by.orion.onlinertasks.di.modules.DbModule;
-import by.orion.onlinertasks.di.modules.MappersModule;
 import by.orion.onlinertasks.di.modules.NetModule;
 import by.orion.onlinertasks.di.modules.NetworkServiceModule;
 import by.orion.onlinertasks.di.modules.RepositoryModule;
@@ -33,7 +32,6 @@ public class App extends Application {
                 .applicationModule(new ApplicationModule(this))
                 .dataSourceModule(new DataSourceModule())
                 .repositoryModule(new RepositoryModule())
-                .mappersModule(new MappersModule())
                 .netModule(new NetModule())
                 .networkServiceModule(new NetworkServiceModule())
                 .dbModule(new DbModule())

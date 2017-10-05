@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.presentation.profile.details.pages.mappers;
+package by.orion.onlinertasks.presentation.profile.details.pages.information.mappers;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

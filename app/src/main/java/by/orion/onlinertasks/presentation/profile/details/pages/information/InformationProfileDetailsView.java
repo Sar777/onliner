@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.presentation.profile.details.pages;
+package by.orion.onlinertasks.presentation.profile.details.pages.information;
 
 import android.support.annotation.NonNull;
 

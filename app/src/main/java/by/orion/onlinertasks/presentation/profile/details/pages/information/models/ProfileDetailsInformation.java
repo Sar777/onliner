@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.presentation.profile.details.pages.models;
+package by.orion.onlinertasks.presentation.profile.details.pages.information.models;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

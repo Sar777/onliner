@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.presentation.profile.details.pages.mappers;
+package by.orion.onlinertasks.presentation.profile.details.pages.information.mappers;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,7 +13,7 @@ import by.orion.onlinertasks.data.models.profile.details.Executor;
 import by.orion.onlinertasks.data.models.profile.details.Profile;
 import by.orion.onlinertasks.data.models.regions.Region;
 import by.orion.onlinertasks.data.models.sections.Sections;
-import by.orion.onlinertasks.presentation.profile.details.pages.models.ProfileDetailsInformation;
+import by.orion.onlinertasks.presentation.profile.details.pages.information.models.ProfileDetailsInformation;
 
 public class ProfileToProfileDetailsInformationMapper implements GenericObjectMapper<ImmutableTriple<Profile, List<Region>, Sections>, ProfileDetailsInformation> {
 

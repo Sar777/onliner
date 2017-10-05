@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
-import by.orion.onlinertasks.data.models.profile.details.rating.Rating;
-
 @AutoValue
 public abstract class Review {
 
@@ -23,7 +21,7 @@ public abstract class Review {
     public abstract String review();
 
     @SerializedName("average_rating")
-    public abstract Integer averageRating();
+    public abstract Float averageRating();
 
     @SerializedName("rating")
     public abstract Rating rating();

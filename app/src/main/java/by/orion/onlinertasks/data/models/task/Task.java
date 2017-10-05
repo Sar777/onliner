@@ -23,12 +23,12 @@ public abstract class Task {
     @Nullable
     public abstract Image image();
 
-    @SerializedName("price")
     @Nullable
+    @SerializedName("price")
     public abstract Price price();
 
-    @SerializedName("executor_id")
     @Nullable
+    @SerializedName("executor_id")
     public abstract Integer executor_id();
 
     @SerializedName("status")
@@ -37,6 +37,7 @@ public abstract class Task {
     @SerializedName("proposals_qty")
     public abstract Integer proposals_qty();
 
+    @Nullable
     @SerializedName("executor_location")
     public abstract Location location();
 

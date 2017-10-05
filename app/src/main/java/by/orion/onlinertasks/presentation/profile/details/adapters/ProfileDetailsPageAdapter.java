@@ -7,7 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import by.orion.onlinertasks.R;
-import by.orion.onlinertasks.presentation.profile.details.pages.InformationProfileDetailsFragment;
+import by.orion.onlinertasks.presentation.profile.details.pages.information.InformationProfileDetailsFragment;
+import by.orion.onlinertasks.presentation.profile.details.pages.reviews.ReviewsProfileDetailsFragment;
 
 public class ProfileDetailsPageAdapter extends FragmentStatePagerAdapter {
 
@@ -39,7 +40,7 @@ public class ProfileDetailsPageAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return InformationProfileDetailsFragment.newInstance(profileId);
             case 2:
-                return InformationProfileDetailsFragment.newInstance(profileId);
+                return ReviewsProfileDetailsFragment.newInstance(profileId);
             default:
                 return null;
         }

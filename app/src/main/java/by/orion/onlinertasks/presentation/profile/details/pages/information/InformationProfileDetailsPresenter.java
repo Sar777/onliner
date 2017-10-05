@@ -1,4 +1,4 @@
-package by.orion.onlinertasks.presentation.profile.details.pages;
+package by.orion.onlinertasks.presentation.profile.details.pages.information;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -9,10 +9,10 @@ import com.arellomobile.mvp.MvpPresenter;
 import javax.inject.Inject;
 
 import by.orion.onlinertasks.common.exceptions.errors.UnknownError;
-import by.orion.onlinertasks.data.models.common.requests.ProfileRequestParams;
+import by.orion.onlinertasks.data.models.common.requests.ProfileDetailsRequestParams;
 import by.orion.onlinertasks.domain.interactors.InformationProfileDetailsInteractor;
 import by.orion.onlinertasks.presentation.common.rx.RxSchedulersProvider;
-import by.orion.onlinertasks.presentation.profile.details.pages.models.ProfileDetailsInformation;
+import by.orion.onlinertasks.presentation.profile.details.pages.information.models.ProfileDetailsInformation;
 
 @InjectViewState
 public class InformationProfileDetailsPresenter extends MvpPresenter<InformationProfileDetailsView> {
@@ -40,7 +40,7 @@ public class InformationProfileDetailsPresenter extends MvpPresenter<Information
         getViewState().showProgress();
         getViewState().hideDetailsLayout();
 
-        informationProfileDetailsInteractor.getProfileDetailsInformation(ProfileRequestParams.builder().id(id).build())
+        informationProfileDetailsInteractor.getProfileInformation(ProfileDetailsRequestParams.builder().id(id).build())
                 .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
                 .subscribe(this::onProfileDetailsSuccess, this::onProfileDetailsError);
     }
